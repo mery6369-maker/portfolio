@@ -1,0 +1,661 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #0a0a0a;
+  --color-surface-1: #121212;
+  --color-surface-2: #1a1a1a;
+  --color-hairline: #262626;
+  --color-hairline-strong: #404040;
+  --color-primary-accent: #ffffff;
+  --color-ink: #ffffff;
+  --color-ink-muted: #a3a3a3;
+  --color-ink-subtle: #737373;
+
+  --font-sans: 'Futura PT', 'Futura', 'Jost', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: 'Space Grotesk', 'Futura PT', 'Futura', 'Pretendard', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    letter-spacing: -0.03em;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+}
+
+
+/* Full-Page PPT Slide Snap Sections */
+.full-page-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Custom Inverted Dynamic Circle Follower Cursor */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: center center;
+  will-change: transform, left, top;
+  transition: opacity 0.25s ease;
+}
+
+#custom-cursor.active {
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* High-Contrast Prominent Tab Switcher Buttons */
+.tab-switcher-container {
+  display: inline-flex;
+  padding: 4px;
+  background-color: #121212;
+  border: 1px solid #404040;
+  border-radius: 8px;
+  gap: 4px;
+}
+
+.portfolio-tab-btn {
+  padding: 8px 18px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: #a3a3a3;
+  background-color: transparent;
+  border-radius: 6px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.portfolio-tab-btn:hover {
+  color: #ffffff;
+  background-color: #1a1a1a;
+}
+
+.portfolio-tab-btn.active {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Top Sticky Navigation Buttons (Clean Text Underline Style) */
+.top-nav-btn {
+  padding: 6px 10px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: #888888;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+}
+
+.top-nav-btn:hover {
+  color: #ffffff;
+}
+
+.top-nav-btn.active {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+  font-weight: 700;
+  background-color: transparent;
+}
+
+/* Mobile Responsive Typography & Layout Enhancements */
+@media (max-width: 640px) {
+  /* Prevent awkward line breaks and text overflow */
+  h1, h2, h3 {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  
+  /* Hero title font size for mobile */
+  .hero-main-title {
+    font-size: clamp(2.75rem, 11vw, 4.5rem) !important;
+    line-height: 0.95 !important;
+  }
+  
+  .hero-sub-title {
+    font-size: clamp(1.2rem, 5.5vw, 2rem) !important;
+  }
+
+  .editorial-item {
+    padding: 14px 4px;
+  }
+  
+  .editorial-item .item-title {
+    font-size: 15px !important;
+    word-break: keep-all;
+  }
+}
+
+
+/* Minimal Badge Tags */
+.acid-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  border: 1px solid var(--color-hairline-strong);
+  background-color: var(--color-surface-1);
+  color: var(--color-ink-muted);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.acid-tag:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.acid-tag.active {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  font-weight: 700;
+}
+
+/* Scroll-Triggered Smooth Entry Animation */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dotted Grid Background (base layer, mouse-reactive canvas overlays this) */
+.acid-grid-bg {
+  background-image: radial-gradient(#262626 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Mouse-reactive dot glow canvas */
+#dot-glow-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Modal Overlay (Studio XD Style) */
+.project-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 10, 10, 0.94);
+  backdrop-filter: blur(16px);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.project-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.project-modal-content {
+  background-color: #121212;
+  border: 1px solid #333333;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  transform: translateY(20px) scale(0.98);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-modal.open .project-modal-content {
+  transform: translateY(0) scale(1);
+}
+
+/* Hide scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Slide Page Indicator Dots */
+.slide-indicator {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slide-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.slide-dot.active {
+  height: 24px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Hide side dots on mobile */
+@media (max-width: 768px) {
+  .slide-indicator {
+    display: none;
+  }
+}
+
+/* Mobile-responsive tab buttons */
+@media (max-width: 640px) {
+  .portfolio-tab-btn {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+}
+
+/* ===== SLIDE 02: Node Constellation + Tool Tag Grid ===== */
+
+/* Node Constellation Canvas */
+#node-constellation {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Node tooltip */
+.node-tooltip {
+  position: absolute;
+  background-color: #121212;
+  border: 1px solid #404040;
+  padding: 10px 16px;
+  border-radius: 8px;
+  z-index: 20;
+  pointer-events: none;
+  max-width: 260px;
+  opacity: 0;
+  transform: translateY(4px) scale(0.97);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+.node-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Tool Tag Grid */
+.tool-tag-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 640px) {
+  .tool-tag-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.tool-tag-card {
+  background-color: #121212;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #a3a3a3;
+  cursor: default;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-tag-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.04) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tool-tag-card:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.tool-tag-card:hover::before {
+  opacity: 1;
+}
+
+.tool-tag-card .tool-tag-name {
+  font-weight: 700;
+  font-size: 13px;
+  display: block;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.tool-tag-card .tool-tag-desc {
+  font-size: 10px;
+  color: #737373;
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+
+.tool-tag-card:hover .tool-tag-desc {
+  color: #a3a3a3;
+}
+
+/* Tool tag card appear animation */
+.tool-tag-card {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.tool-tag-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.25s, color 0.25s, box-shadow 0.25s;
+}
+
+/* Typing Cursor Blink */
+.typing-cursor {
+  display: inline;
+  animation: blink-cursor 0.75s step-end infinite;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ===== Category Filter Buttons ===== */
+.category-filter-btn {
+  padding: 4px 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: #737373;
+  background-color: #121212;
+  border: 1px solid #262626;
+  border-radius: 6px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.category-filter-btn:hover {
+  color: #ffffff;
+  border-color: #525252;
+}
+
+.category-filter-btn.active {
+  color: #000000;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  font-weight: 700;
+}
+
+/* ===== Project Card Micro Hover Interactions ===== */
+.project-card {
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+/* Shimmer Wave Overlay on Hover */
+.card-shimmer-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.15) 50%, transparent 60%);
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  transition: background-position-x 0.8s ease-in-out;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.project-card:hover .card-shimmer-overlay {
+  background-position-x: -80%;
+}
+
+/* Hover Action Badge Overlay */
+.card-hover-action-badge {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.card-hover-action-badge span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: #000000;
+  background-color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transform: translateY(8px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+}
+
+.project-card:hover .card-hover-action-badge {
+  opacity: 1;
+}
+
+.project-card:hover .card-hover-action-badge span {
+  transform: translateY(0);
+}
+
+/* Force-hide utility that overrides any display property */
+.is-hidden {
+  display: none !important;
+}
+
+/* ===== Pinterest Editorial List & Floating Preview ===== */
+.editorial-project-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.editorial-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 12px;
+  border-bottom: 1px solid #262626;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+.editorial-item:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: #ffffff;
+  padding-left: 20px;
+}
+
+.editorial-item .item-title {
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.editorial-item:hover .item-title {
+  color: #ffffff;
+}
+
+/* Floating Mouse-following Circular Lens Image Portal (Positioned Beside Cursor so Text is 100% Visible) */
+#floating-project-preview {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 95;
+  opacity: 0;
+  transform: scale(0.4) translate(55px, -50%);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.35), 0 30px 80px rgba(0, 0, 0, 0.95);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  background-color: #000000;
+  backdrop-filter: blur(10px);
+}
+
+#floating-project-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  transition: transform 0.4s ease;
+}
+
+#floating-project-preview.active {
+  opacity: 1;
+  transform: scale(1) translate(55px, -50%);
+}
+
+/* ===== Vivid Pop Color Tags (Vibrant Reference Palette) ===== */
+.pop-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+  cursor: default;
+  user-select: none;
+}
+
+.pop-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+}
+
+.pop-tag-klein {
+  background-color: #4100F5;
+  color: #FFFFFF;
+}
+
+.pop-tag-citric {
+  background-color: #CDF564;
+  color: #0A0A0A;
+}
+
+.pop-tag-aquamarine {
+  background-color: #9BF0E1;
+  color: #0A0A0A;
+}
+
+.pop-tag-fushia {
+  background-color: #F037A5;
+  color: #FFFFFF;
+}
+
+.pop-tag-tangerine {
+  background-color: #FF4632;
+  color: #FFFFFF;
+}
+
+/* ===== 3D Avant-Garde Card Perspective ===== */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* ===== First-Time Entry Staggered Reveal Animation ===== */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-1 { transition-delay: 0.08s; }
+.stagger-2 { transition-delay: 0.18s; }
+.stagger-3 { transition-delay: 0.28s; }
+.stagger-4 { transition-delay: 0.38s; }
+.stagger-5 { transition-delay: 0.48s; }

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAYEIN | Visual AI Architect & Motion Specialist</title>
+    <meta name="description" content="CHAYEIN — Visual AI Architect & Motion Specialist. ComfyUI 커스텀 파이프라인, UE5 기반 3D 공간 구현, 생성형 AI 비주얼 제작.">
+    <meta property="og:title" content="CHAYEIN | Visual AI Architect">
+    <meta property="og:description" content="Designing Controllable AI Pipelines & Motion.">
+    <meta property="og:image" content="https://chayein-portfolio.vercel.app/og-image.png?v=2">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://chayein-portfolio.vercel.app/og-image.png?v=2">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- Fonts -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body class="antialiased selection:bg-white selection:text-black relative acid-grid-bg">
+
+    <!-- Custom Follower Cursor -->
+    <div id="custom-cursor"></div>
+
+    <!-- Mouse-reactive dot glow background canvas -->
+    <canvas id="dot-glow-canvas"></canvas>
+
+    <!-- Top Fixed Sticky Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-hairline">
+        <div class="max-w-[1200px] mx-auto px-4 md:px-8 h-14 flex items-center justify-between font-mono text-xs">
+            <!-- Brand Logo / Title (Click to Scroll Main) -->
+            <button data-nav="section-01" class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
+                <span class="font-sans font-black tracking-wider text-white text-base uppercase">CHAYEIN</span>
+            </button>
+
+            <!-- Navigation Links (MAIN -> WORKS -> EXPERTISE -> CONTACT) -->
+            <nav class="flex items-center gap-1 sm:gap-2" id="top-nav-menu">
+                <button data-nav="section-01" class="top-nav-btn active">MAIN</button>
+                <button data-nav="section-02" class="top-nav-btn">WORKS</button>
+                <button data-nav="section-03" class="top-nav-btn">EXPERTISE</button>
+                <button data-nav="section-04" class="top-nav-btn">CONTACT</button>
+            </nav>
+
+            <!-- Quick Email Action -->
+            <div class="hidden md:flex items-center gap-4 text-ink-muted">
+                <button id="copy-email-btn" class="hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 underline underline-offset-4 decoration-hairline-strong">
+                    <span>mery6369@gmail.com</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Side Indicator Dots (Fixed Right) -->
+    <div class="slide-indicator">
+        <div class="slide-dot active" data-target="section-01" title="Main"></div>
+        <div class="slide-dot" data-target="section-02" title="Works"></div>
+        <div class="slide-dot" data-target="section-03" title="Expertise"></div>
+        <div class="slide-dot" data-target="section-04" title="Contact"></div>
+    </div>
+
+    <!-- Toast Notification for Copy -->
+    <div id="toast-notification" class="fixed bottom-8 right-8 bg-white text-black font-mono text-xs px-4 py-2.5 rounded shadow-2xl z-[999] opacity-0 translate-y-4 transition-all duration-300 pointer-events-none font-bold border border-black">
+        COPIED TO CLIPBOARD: mery6369@gmail.com
+    </div>
+
+    <!-- 01. MAIN PAGE (HERO - FULL VIEWPORT WIDTH SO CIRCLE CROPS AT REAL SCREEN EDGE) -->
+    <section id="section-01" class="full-page-section border-b border-hairline animate-on-scroll justify-between relative overflow-hidden pt-14 pb-6 w-full">
+        
+        <!-- Background Massive Circular Video Container (Positioned relative to full 100vw viewport) -->
+        <div class="absolute -right-[15vw] sm:-right-[18vw] md:-right-[22vw] top-1/2 -translate-y-1/2 h-[90vh] w-[90vh] sm:h-[96vh] sm:w-[96vh] aspect-square z-0 overflow-hidden rounded-full border border-white/10 shadow-[0_0_120px_rgba(0,0,0,0.9)]">
+            <video id="hero-video" src="/hero_showreel.mp4" poster="/cover_sh.gif" autoplay loop muted playsinline class="w-full h-full object-cover">
+            </video>
+            <!-- Soft Vignette overlay -->
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/90 via-[#0a0a0a]/20 to-transparent pointer-events-none"></div>
+        </div>
+
+        <!-- 1200px Centered Content Container for Text Alignment -->
+        <div class="max-w-[1200px] mx-auto px-4 md:px-8 w-full flex-1 flex flex-col justify-between relative z-10 my-auto">
+            
+            <div class="my-auto space-y-3 sm:space-y-4 select-none max-w-[85%] sm:max-w-[75%] md:max-w-[65%] pl-2 sm:pl-4 pt-8 sm:pt-0">
+                <div class="space-y-1 sm:space-y-2">
+                    <!-- Main Title (100% Futura Light) -->
+                    <h1 class="hero-main-title text-5xl sm:text-7xl md:text-8xl lg:text-[9.5rem] font-sans font-light tracking-tightest leading-[0.9] text-white uppercase drop-shadow-2xl reveal-item stagger-1">
+                        CHAYEIN
+                    </h1>
+                    
+                    <!-- Sub Title (100% Futura Light) -->
+                    <h2 class="hero-sub-title text-xl sm:text-3xl md:text-4xl lg:text-5xl font-sans font-light tracking-tight text-white uppercase drop-shadow-xl pt-1 reveal-item stagger-2">
+                        VISUAL AI ARCHITECT
+                    </h2>
+                </div>
+
+                <!-- Caption Line -->
+                <p class="font-mono text-xs sm:text-sm md:text-base text-white/80 tracking-wider pt-2 font-medium max-w-[480px] leading-relaxed drop-shadow-md reveal-item stagger-3">
+                    — Designing Controllable AI Pipelines & Motion
+                </p>
+            </div>
+
+            <!-- Centered Pill-Shape CTA Button -->
+            <div class="w-full flex justify-center z-10 pt-4 pb-2 reveal-item stagger-4">
+                <button id="cta-explore-btn" class="px-7 py-2.5 bg-surface-1/90 backdrop-blur-md border border-white/80 hover:border-white text-white font-mono text-xs font-bold rounded-full hover:bg-white hover:text-black transition-all cursor-pointer flex items-center gap-2.5 shadow-2xl group">
+                    <span>Explore Work</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:translate-y-0.5 transition-transform"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Remaining Full Page Sections Wrapper -->
+    <div class="max-w-[1200px] mx-auto px-4 md:px-8">
+
+        <!-- 02. WORKS (Section 02) -->
+        <section id="section-02" class="full-page-section border-b border-hairline animate-on-scroll">
+            
+            <div class="flex flex-col gap-3 pb-4 border-b border-hairline w-full pt-8 sm:pt-12">
+                <div class="flex items-center justify-between reveal-item stagger-1">
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white tracking-tight leading-none uppercase">WORKS</h2>
+                </div>
+
+                <!-- Tab Switcher (01 COMMERCIAL PORTFOLIO / 02 AI EXPERIMENTAL LAB & R&D) -->
+                <div class="flex items-center pt-1 reveal-item stagger-2">
+                    <div class="tab-switcher-container shadow-xl">
+                        <button class="portfolio-tab-btn active" data-tab="commercial">
+                            01. COMMERCIAL PORTFOLIO [14]
+                        </button>
+                        <button class="portfolio-tab-btn" data-tab="ailab">
+                            02. AI EXPERIMENTAL LAB & R&D [4]
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scrollable Grid Container inside Slide -->
+            <div class="my-auto w-full max-h-[66vh] overflow-y-auto no-scrollbar pr-2 pt-2 reveal-item stagger-3">
+                
+                <!-- Tab 1: Commercial Portfolio 14 Editorial Items (No Numbers) -->
+                <div id="portfolio-grid-commercial" class="editorial-project-list">
+                    
+                    <!-- 1. Clock Gear Symphony -->
+                    <div class="editorial-item group" data-project="clock" data-preview="/projects/clock_main.png">
+                        <div class="flex items-center gap-4 sm:gap-6">
+                            <h3 class="item-title">CLOCK GEAR SYMPHONY</h3>
+                        </div>
+                        <div class="flex items-center gap-3 font-mono text-xs">
+                            <span class="text-ink-subtle hidden sm:inline">2025</span>
+                            <span class="text-white group-hover:translate-x-1 transition-transform">↗</span>
+                        </div>
+                    </div>
+
+                    <!-- 2. Endangered Species -->
+                    <div class="editorial-item group" data-project="endangered" data-preview="/projects/endangered_still_main.png">
+                        <div class="flex items-center gap-4 sm:gap-6">
+                            <h3 class="item-title">국립생태원 멸종위기종 Ai 아나몰픽</h3>
+                        </div>
+                        <div class="flex items-center gap-3 font-mono text-xs">
+                            <span class="text-ink-subtle hidden sm:inline">2026</span>
+                            <span class="text-white group-hover:translate-x-1 transition-transform">↗</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. Media Calendar -->
+                    <div class="editorial-item group" data-project="mediacalendar" data-preview="/projects/mediacalendar_1.png">
+                        <div class="flex items-center gap-4 sm:gap-6">
+                            <h3 class="item-title">Ai MEDIA ART [ MEDIA CALENDAR ]</h3>
+                        </div>
+                        <div class="flex items-center gap-3 font-mono text-xs">
+                            <span class="text-ink-subtle hidden sm:inline">2023</span>
+                            <span class="text-white group-hover:translate-x-1 transition-transform">↗</span>
+                        </div>
+                    </div>
+
+                    <!-- 4. MBC OUTRO -->
+                    <div class="editorial-item group" data-project="mbc" data-preview="/project_mbc.png">
+                        <div class="flex items-center gap-4 sm:gap-6">
+                            <h3 class="item-title">MBC 'PD가 사라졌다' OUTRO</h3>
+                        </div>
+                        <div class="flex items-center gap-3 font-mono text-xs">
+                            <span class="text-ink-subtle hidden sm:inline">2024.02</span>
+                            <span class="text-white group-hover:translate-x-1 transition-transform">↗</span>
+                        </div>
+                    </div>
+
+                    <!-- 5. Pepsi Online Pop-up -->
+                    <div class="editorial-item group" data-project="pepsi" data-preview="/projects/pepsi_custom_1.gif">
+                        <div class="flex items-center gap-4 sm:gap-6">
+                            <h3 class="item-title">PEPSI ONLINE POP-UP</h3>
+                        </div>
+                        <div class="flex items-center gap-3 font-mono text-xs">
+                            <span class="text-ink-subtle hidden sm:inline">2024.07</span>
+                            <span class="text-white group-hover:translate-x-1 transition-transform">↗</span>
+                        </div>
+                    </div>
+
+                    <!-- 6. Scube LAB Online Showroom -->
+                    <div class="editorial-item group" data-project="scube" data-preview="/projects/scube_main.png">
+                        <div class="flex items-center gap-4 sm:gap-6">
+                            <h3 class="item-title">SCUBE LAB Online Showroom</h3>
+                        </div>
+                        <div class="flex items-center gap-3 font-mono text-xs">
+                            <span class="text-ink-subtle hidden sm:inline">2024.07</span>
+                            <span class="text-white group-hover:translate-x-1 transition-transform">↗</span>
+                        </div>
+                    </div>
+
+                    <!-- 7. XR Advertise -->
+                    <div class="editorial-item group" data-project="xr" data-preview="">
+                        <div class="flex items-center gap-4 sm:gap-6">
+                            <h3 class="item-title">XR옥외광고 제휴사업</h3>
+                        </div>
+                        <div class="flex items-center gap-3 font-mono text-xs">
+                            <span class="text-ink-subtle hidden sm:inline">2024</span>
+                            <span class="text-white group-hover:translate-x-1 transition-transform">↗</span>
+                        </div>
+                    </div>
+
+                    <!-- 8. Raemian -->
+                    <div class="editorial-item group" data-project="raemian" data-preview="">
+                        <div class="flex items-center gap-4 sm:gap-6">
+                            <h3 class="item-title">RAEMIAN 송도역 센트리폴</h3>
+                        </div>
+                        <div class="flex items-center gap-3 font-mono text-xs">
+                            <span class="text-ink-subtle hidden sm:inline">2024</span>
+                            <span class="text-white group-hover:translate-x-1 transition-transform">↗</span>
+                        </div>
+                    </div>
+
+                    <!-- 9. SH -->
+                    <div class="editorial-item group" data-project="sh" data-preview="/project_sh.jpg">
+                        <div class="flex items-center gap-4 sm:gap-6">
+                            <h3 class="item-title">SH형 미래주거모델 특화영상</h3>
+                        </div>
+                        <div class="flex items-center gap-3 font-mono text-xs">
+                            <span class="text-ink-subtle hidden sm:inline">2026</span>
+                            <span class="text-white group-hover:translate-x-1 transition-transform">↗</span>
+                        </div>
+                    </div>
+
+                    <!-- 10. KT&G -->
+                    <div class="editorial-item group" data-project="ktg" data-preview="/projects/ktg_custom_1.png">
+                        <div class="flex items-center gap-4 sm:gap-6">
+                            <h3 class="item-title">KT&G 릴 미니멀리움 마곡 미디어아트</h3>
+                        </div>
+                        <div class="flex items-center gap-3 font-mono text-xs">
+                            <span class="text-ink-subtle hidden sm:inline">2026.01</span>
+                            <span class="text-white group-hover:translate-x-1 transition-transform">↗</span>
+                        </div>
+                    </div>
+
+                    <!-- 11. SUMMER ROOM -->
+                    <div class="editorial-item group" data-project="summerroom" data-preview="">
+                        <div class="flex items-center gap-4 sm:gap-6">
+                            <h3 class="item-title">SUMMER ROOM</h3>
+                        </div>
+                        <div class="flex items-center gap-3 font-mono text-xs">
+                            <span class="text-ink-subtle hidden sm:inline">2024</span>
+                            <span class="text-white group-hover:translate-x-1 transition-transform">↗</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Tab 2: AI Experimental Lab & Research (Restored 4 Cards: BONUNNUN, Avid, ComfyUI, Trellis) -->
+                <div id="portfolio-grid-ailab" class="grid grid-cols-1 md:grid-cols-2 gap-6 is-hidden">
+                    
+                    <!-- Card 1: BONUNNUN (보눈눈) -->
+                    <div class="bg-surface-1 border border-hairline hover:border-white rounded-xl p-6 space-y-4 transition-all flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between border-b border-hairline pb-3">
+                                <span class="font-mono text-xs font-bold text-white">EYE ARCHIVE</span>
+                                <span class="acid-tag active text-[10px]">LIVE PLATFORM</span>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-white">BONUNNUN (보눈눈)</h3>
+                            <p class="text-xs text-ink-muted leading-relaxed font-light">
+                                <strong>"나만의 안목 아카이브, 보눈눈."</strong><br>
+                                생성형 AI 비주얼 감도와 영감의 큐레이션을 집약한 아티스틱 안목 아카이빙 플랫폼 및 웹 서비스 프로젝트입니다.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-hairline/60 flex justify-between items-center">
+                            <span class="font-mono text-[10px] text-ink-subtle">bonunnun.lovable.app</span>
+                            <a href="https://bonunnun.lovable.app/" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 bg-white text-black font-mono text-xs font-bold rounded hover:bg-ink-muted transition-colors inline-flex items-center gap-1 shadow-md">
+                                <span>Visit ↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Avid AI Creative Study Team -->
+                    <div class="bg-surface-1 border border-hairline hover:border-white rounded-xl p-6 space-y-4 transition-all flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between border-b border-hairline pb-3">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    <span class="font-mono text-xs font-bold text-white">AI STUDY TEAM</span>
+                                </div>
+                                <span class="acid-tag active text-[10px]">2025.10 ~ PRESENT</span>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-white">Avid AI Creative Study Team</h3>
+                            <p class="text-xs text-ink-muted leading-relaxed font-light">
+                                생성형 AI 기반 비주얼 모션, 커스텀 노드 파이프라인 및 멀티모달 비디오 워크플로우 연구를 수행하는 AI 스터디 팀 <strong>Avid(@avid.kr)</strong>의 팀원으로 활동 중입니다.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-hairline/60 flex justify-between items-center">
+                            <span class="font-mono text-[10px] text-ink-subtle">Team Avid Member</span>
+                            <a href="https://www.instagram.com/avid.kr/" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 bg-white text-black font-mono text-xs font-bold rounded hover:bg-ink-muted transition-colors inline-flex items-center gap-1.5 shadow-md">
+                                <span>Visit @avid.kr ↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: ComfyUI 커스텀 노드 Study -->
+                    <div class="bg-surface-1 border border-hairline hover:border-white rounded-xl p-6 space-y-4 transition-all flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between border-b border-hairline pb-3">
+                                <span class="font-mono text-xs font-bold text-white">NODE ENGINEERING</span>
+                                <span class="acid-tag text-[9px]">COMFYUI STUDY</span>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-white">ComfyUI Custom Node & Workflow Study</h3>
+                            <p class="text-xs text-ink-muted leading-relaxed font-light">
+                                ComfyUI 커스텀 노드 연결 구조 설계, ControlNet Depth/IP-Adapter 튜닝, 12패널 레퍼런스 그리드 노드 구축으로 인물 골격과 피부 질감을 다중 씬에서 엄격히 통제하는 노드 아키텍처 연구를 진행하고 있습니다.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-hairline/60 flex justify-between items-center font-mono text-[10px] text-ink-subtle">
+                            <span>Node Archiving & Custom Nodes</span>
+                            <span class="text-white font-bold">[ACTIVE STUDY]</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Microsoft Trellis 3D -->
+                    <div class="bg-surface-1 border border-hairline hover:border-white rounded-xl p-6 space-y-4 transition-all flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between border-b border-hairline pb-3">
+                                <span class="font-mono text-xs font-bold text-white">3D & MULTIMODAL</span>
+                                <span class="acid-tag text-[10px]">R&D PIPELINE</span>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-white">Microsoft Trellis 3D & LTX-2 Research</h3>
+                            <p class="text-xs text-ink-muted leading-relaxed font-light">
+                                Microsoft Trellis 3D 생성 모델을 활용해 프롬프트로부터 3D 메시를 즉시 추출하고, 블렌더 지오메트리 노드를 거쳐 UE5 랜드스케이프에 실시간 배치하는 멀티모달 3D 파이프라인 및 LTX-2 오디오-비디오 신경망 검증 연구입니다.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-hairline/60 flex justify-between items-center font-mono text-[10px] text-ink-subtle">
+                            <span>Trellis 3D / LTX-2 Neural Net</span>
+                            <span class="text-white font-bold">[VERIFIED]</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <footer class="flex justify-between items-center text-xs font-mono text-ink-subtle w-full pt-4 border-t border-hairline">
+                <span>[02 / 04]</span>
+                <span>© CHAYEIN</span>
+            </footer>
+
+        </section>
+
+        <!-- 03. EXPERTISE (Section 03) -->
+        <section id="section-03" class="full-page-section border-b border-hairline animate-on-scroll justify-between">
+            
+            <!-- Header & Integrated Statement Block -->
+            <div class="w-full pt-8 sm:pt-10 pb-4 border-b border-hairline space-y-3 reveal-item stagger-1">
+                <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white tracking-tight leading-none uppercase">EXPERTISE</h2>
+                <p class="text-base sm:text-xl md:text-2xl font-light text-white leading-snug tracking-tight max-w-[1000px]">
+                    Accelerating Production & Elevating Visuals Through Controllable AI & 3D Pipelines.
+                </p>
+                <span class="font-mono text-xs text-ink-subtle block tracking-wider">
+                    — 디자인 안목으로 AI와 3D 파이프라인을 통제하여 속도와 퀄리티를 동시에 구현합니다.
+                </span>
+            </div>
+
+            <!-- 50:50 Dual Panels: Tightly Positioned Right Under Header Set -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 my-auto pt-2 reveal-item stagger-2">
+                
+                <!-- 3 Core Strengths Cards (Left 6 cols) -->
+                <div class="lg:col-span-6 bg-surface-1 border border-hairline rounded-xl p-5 sm:p-6 flex flex-col justify-start space-y-3">
+                    <div class="flex items-center justify-between border-b border-hairline pb-3">
+                        <span class="font-mono text-xs text-white font-bold">CORE STRENGTHS</span>
+                        <span class="font-mono text-[10px] text-ink-subtle">핵심 경쟁력 3가지</span>
+                    </div>
+
+                    <div class="space-y-3 pt-1">
+                        <!-- Strength 1 -->
+                        <div class="p-3.5 bg-surface-2/60 border border-hairline rounded-lg space-y-1 hover:border-white/40 transition-colors">
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-[10px] text-black bg-white px-1.5 py-0.5 rounded font-bold">01</span>
+                                <span class="text-xs font-bold text-white font-mono">Control & Consistency</span>
+                                <span class="text-[10px] text-ink-subtle">(비주얼 일관성 통제)</span>
+                            </div>
+                            <p class="text-xs text-ink-muted leading-relaxed font-light pl-6">
+                                ComfyUI 노드 구조 설계로 우연에 의존하지 않는 정교한 비주얼 일관성과 스타일을 제어합니다.
+                            </p>
+                        </div>
+
+                        <!-- Strength 2 -->
+                        <div class="p-3.5 bg-surface-2/60 border border-hairline rounded-lg space-y-1 hover:border-white/40 transition-colors">
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-[10px] text-black bg-white px-1.5 py-0.5 rounded font-bold">02</span>
+                                <span class="text-xs font-bold text-white font-mono">3D & Real-time Integration</span>
+                                <span class="text-[10px] text-ink-subtle">(3D 공간 미디어 연출)</span>
+                            </div>
+                            <p class="text-xs text-ink-muted leading-relaxed font-light pl-6">
+                                Unreal Engine 5의 실감형 3D 공간 연출력과 AI 비주얼을 결합해 옥외광고 및 공간 미디어를 완성합니다.
+                            </p>
+                        </div>
+
+                        <!-- Strength 3 -->
+                        <div class="p-3.5 bg-surface-2/60 border border-hairline rounded-lg space-y-1 hover:border-white/40 transition-colors">
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-[10px] text-black bg-white px-1.5 py-0.5 rounded font-bold">03</span>
+                                <span class="text-xs font-bold text-white font-mono">Agentic AX & Speed</span>
+                                <span class="text-[10px] text-ink-subtle">(공정 자동화와 높은 속도)</span>
+                            </div>
+                            <p class="text-xs text-ink-muted leading-relaxed font-light pl-6">
+                                기획부터 피니싱까지 AI 에이전트 자동화 프로세스를 구축하여 제작 시간을 획기적으로 단축합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vivid Pop-Color Tool Stack (Right 6 cols - Top Aligned) -->
+                <div class="lg:col-span-6 bg-surface-1 border border-hairline rounded-xl p-5 sm:p-6 flex flex-col justify-start space-y-3">
+                    <div class="flex items-center justify-between border-b border-hairline pb-3">
+                        <span class="font-mono text-xs text-white font-bold">TOOL STACK</span>
+                        <span class="font-mono text-[10px] text-ink-subtle">14 CORE TOOLS</span>
+                    </div>
+                    
+                    <!-- Sequential Vivid Pop Color Tags (Grouped by Category Color) -->
+                    <div class="flex flex-wrap gap-2.5 pt-2">
+                        <!-- 3D & Spatial: Citric (#CDF564) -->
+                        <span class="pop-tag pop-tag-citric">Unreal Engine 5</span>
+                        <span class="pop-tag pop-tag-citric">Blender</span>
+                        
+                        <!-- Motion & Edit: Aquamarine (#9BF0E1) -->
+                        <span class="pop-tag pop-tag-aquamarine">After Effects</span>
+                        <span class="pop-tag pop-tag-aquamarine">Premiere Pro</span>
+                        <span class="pop-tag pop-tag-aquamarine">DaVinci Resolve</span>
+                        
+                        <!-- AI & LLM: Fushia (#F037A5) -->
+                        <span class="pop-tag pop-tag-fushia">ComfyUI</span>
+                        <span class="pop-tag pop-tag-fushia">Magnific AI</span>
+                        <span class="pop-tag pop-tag-fushia">Higgsfield AI</span>
+                        <span class="pop-tag pop-tag-fushia">Antigravity</span>
+                        <span class="pop-tag pop-tag-fushia">Claude</span>
+                        <span class="pop-tag pop-tag-fushia">Gemini</span>
+                        
+                        <!-- Design: Tangerine (#FF4632) -->
+                        <span class="pop-tag pop-tag-tangerine">Figma</span>
+                        <span class="pop-tag pop-tag-tangerine">Photoshop</span>
+                        <span class="pop-tag pop-tag-tangerine">Illustrator</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="flex justify-end items-center text-xs font-mono text-ink-subtle w-full pt-3 border-t border-hairline mt-auto">
+                <span>© CHAYEIN</span>
+            </footer>
+
+        </section>
+
+        <!-- 04. CONTACT -->
+        <section id="section-04" class="full-page-section animate-on-scroll">
+            
+            <div class="flex items-center justify-between pb-4 border-b border-hairline w-full pt-8 sm:pt-12 reveal-item stagger-1">
+                <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white tracking-tight leading-none uppercase">CONTACT</h2>
+            </div>
+
+            <!-- Experimental 3D Avant-Garde Business Card (3D Tilt & Holographic Reflection) -->
+            <div class="my-auto w-full flex justify-center items-center py-6 perspective-1000 reveal-item stagger-2">
+                <div id="experimental-card-wrapper" class="relative group cursor-pointer w-full max-w-[360px] sm:max-w-[400px]">
+                    
+                    <!-- Main Card (White Solid + Holographic Shine + 3D Tilt Target) -->
+                    <div id="experimental-card" class="relative w-full bg-white text-black p-8 sm:p-10 border border-white flex flex-col justify-between space-y-6 shadow-[0_30px_90px_rgba(0,0,0,0.95)] overflow-hidden rounded-none font-sans transform-gpu transition-transform duration-100 reveal-item">
+                        
+                        <!-- Holographic Rainbow Foil Reflection Layer -->
+                        <div id="card-holo-shine" class="absolute inset-0 opacity-0 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none mix-blend-color-dodge bg-[radial-gradient(circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(255,0,128,0.8)_0%,rgba(0,255,200,0.8)_50%,transparent_100%)]"></div>
+
+                        <!-- Card Header Label -->
+                        <div class="flex items-center justify-between border-b-2 border-black pb-3 w-full relative z-10">
+                            <span class="font-mono text-[10px] font-black tracking-widest uppercase bg-black text-white px-2 py-0.5">DIRECT CONTACT</span>
+                            <span class="font-mono text-xs font-extrabold text-black">SEOUL / KR</span>
+                        </div>
+
+                        <!-- Main Big Brand Logo & Profile -->
+                        <div class="space-y-2 relative z-10 text-left">
+                            <h3 class="text-4xl sm:text-5xl font-black tracking-tighter leading-none text-black uppercase font-sans">
+                                CHAYEIN
+                            </h3>
+                            <div class="space-y-1 pt-2">
+                                <p class="font-mono text-base font-black text-black uppercase tracking-wider">차예인 / CHAYEIN</p>
+                                <p class="font-mono text-xs sm:text-sm font-extrabold text-black/90 uppercase tracking-tight">
+                                    VISUAL AI & 3D DIRECTING
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Copy Email Trigger -->
+                        <div class="pt-4 border-t-2 border-black w-full relative z-10 text-left">
+                            <span class="font-mono text-[10px] text-black/60 uppercase block font-bold mb-1">CLICK TO COPY EMAIL</span>
+                            <button id="card-email-btn" class="w-full font-mono text-sm sm:text-base font-black text-white bg-black hover:bg-neutral-800 py-3 px-4 transition-all duration-200 cursor-pointer flex items-center justify-between group/btn">
+                                <span id="card-email-text">mery6369@gmail.com</span>
+                                <span class="font-mono text-xs bg-white text-black px-2 py-0.5 font-bold group-hover/btn:translate-x-1 transition-transform">COPY ↗</span>
+                            </button>
+                        </div>
+
+                        <!-- Bottom Avant-Garde Grid Barcode Stamp -->
+                        <div class="pt-2 flex justify-between items-end w-full relative z-10 border-t border-black/10 font-mono text-[9px] text-black/50 uppercase font-bold">
+                            <span>AUTONOMOUS PIPELINE</span>
+                            <span>2026 ARCHIVE</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <footer class="flex justify-end items-center text-xs font-mono text-ink-subtle w-full pt-4 border-t border-hairline">
+                <span>© CHAYEIN. ALL RIGHTS RESERVED.</span>
+            </footer>
+
+        </section>
+
+    </div>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="project-modal">
+        <div class="project-modal-content relative p-6 md:p-8 space-y-6">
+            <button id="modal-close-btn" class="absolute top-4 right-4 text-white font-mono text-xs px-3 py-1 bg-surface-2 border border-hairline rounded hover:bg-white hover:text-black transition-colors cursor-pointer z-10">
+                [CLOSE ESC]
+            </button>
+
+            <!-- Unified Media Container: Thumbnail + Play Button + Video / YouTube Embed -->
+            <div id="modal-media-container" class="w-full aspect-[16/9] rounded-lg overflow-hidden bg-black border border-hairline relative">
+                <!-- Thumbnail Image (always visible initially) -->
+                <img id="modal-img" src="" alt="" class="w-full h-full object-cover">
+                
+                <!-- Play Button Overlay (shown only when video available) -->
+                <button id="modal-play-btn" class="absolute inset-0 flex items-center justify-center bg-black/40 hover:bg-black/20 transition-colors cursor-pointer is-hidden group/play z-10" aria-label="Play Video">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-2xl group-hover/play:scale-110 transition-transform">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="#000" class="ml-1"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                </button>
+
+                <!-- YouTube Iframe (hidden until play clicked) -->
+                <iframe id="modal-iframe" src="" class="absolute inset-0 w-full h-full border-0 is-hidden z-20" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                
+                <!-- Local Video Player (hidden until play clicked) -->
+                <video id="modal-video" src="" controls class="absolute inset-0 w-full h-full object-cover is-hidden z-20"></video>
+            </div>
+
+            <!-- Project Details -->
+            <div class="space-y-4">
+                <div class="flex flex-wrap justify-between items-start gap-2 border-b border-hairline pb-3">
+                    <h3 id="modal-title" class="text-xl sm:text-2xl font-bold text-white">Project Title</h3>
+                    <div class="font-mono text-xs text-ink-muted space-x-3">
+                        <span id="modal-client">Client: -</span>
+                        <span id="modal-year">Year: -</span>
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <p id="modal-roles" class="font-mono text-xs text-white font-semibold">Roles: -</p>
+                    <p id="modal-tools" class="font-mono text-xs text-ink-muted">Tools: -</p>
+                </div>
+
+                <p id="modal-desc" class="text-xs sm:text-sm text-ink-muted leading-relaxed font-light border-t border-hairline/60 pt-3">Description...</p>
+
+                <!-- Multi-Image Visual Gallery Grid inside Modal -->
+                <div id="modal-gallery-wrapper" class="space-y-2 border-t border-hairline/60 pt-4">
+                    <span class="font-mono text-[10px] text-white uppercase tracking-wider block">PROJECT DETAIL VISUAL STILLS</span>
+                    <div id="modal-gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    </div>
+                </div>
+
+                <!-- Multi-YouTube Link Button Container -->
+                <div class="pt-2 flex flex-wrap justify-end gap-2">
+                    <div id="modal-youtube-links-wrapper" class="flex flex-wrap gap-2"></div>
+                    <a id="modal-vimeo-link" href="#" target="_blank" rel="noopener noreferrer" class="hidden px-4 py-2 bg-white text-black font-mono text-xs font-bold rounded hover:bg-ink-muted transition-colors items-center gap-2 shadow-md">
+                        <span>Watch Full Project Video</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Project Image Preview for Editorial List -->
+    <div id="floating-project-preview"><img id="floating-preview-img" src="" alt="Preview"></div>
+
+    <!-- Core Script -->
+    <script type="module" src="/main.js"></script>
+
+</body>
+</html>
