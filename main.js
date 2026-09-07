@@ -349,10 +349,15 @@ function initPortfolioTabsAndModal() {
             category: '3D Motion / Spatial Film',
             roles: '3D Modeling, Spatial Lighting & Render',
             tools: 'Blender, After Effects',
-            img: '',
+            img: '/projects/summerroom_thumb_1.jpg',
             portfolioUrl: 'https://chayein.myportfolio.com/summer-room',
+            youtubeLinks: [
+                { label: '▶ Watch YouTube Shorts (YouTube)', url: 'https://youtube.com/shorts/oqG8wvAXjkk' }
+            ],
             desc: '여름의 청량한 조도와 여유로운 공간감을 표현한 3D 시네마틱 룸 렌더링 프로젝트입니다.',
-            gallery: []
+            gallery: [
+                '/projects/summerroom_thumb_1.jpg'
+            ]
         }
     };
 
