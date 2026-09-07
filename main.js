@@ -285,10 +285,22 @@ function initPortfolioTabsAndModal() {
             category: '3D Architecture / Spatial Film',
             roles: 'Spatial Lighting, Environment Rendering & Texture Mapping',
             tools: 'Unreal Engine 5, Blender',
-            img: '',
+            img: '/projects/raemian_still_1.png',
             portfolioUrl: 'https://chayein.myportfolio.com/raemian',
+            youtubeLinks: [
+                { label: '▶ Watch Video (YouTube)', url: 'https://youtu.be/t0H8tW__Gmw' }
+            ],
             desc: '래미안 송도역 센트리폴 주거 공간의 미래 지향적 건축 텍스처와 빛의 조화를 시네마틱 3D 영상으로 연출한 프로젝트입니다.',
-            gallery: []
+            gallery: [
+                '/projects/raemian_still_1.png',
+                '/projects/raemian_still_2.png',
+                '/projects/raemian_still_3.png',
+                '/projects/raemian_still_4.png',
+                '/projects/raemian_01.gif',
+                '/projects/raemian_02.gif',
+                '/projects/raemian_03.gif',
+                '/projects/raemian_04.gif'
+            ]
         },
         'sh': {
             title: 'SH형 미래주거모델 특화영상',
@@ -297,14 +309,19 @@ function initPortfolioTabsAndModal() {
             category: 'AI Video / Motion Graphics',
             roles: 'Storyboards, AI Video Pipeline, Motion Graphics & Edit',
             tools: 'Kling 3.0, Magnific Spaces, Manus, Gemini, AE',
-            img: '/project_sh.jpg',
+            img: '/projects/sh_senior_1.png',
             videoSrc: '',
             youtubeLinks: [
                 { label: '▶ Watch Video (YouTube)', url: 'https://youtu.be/skt9Fazz45Y' }
             ],
             desc: '고령가구 및 양육가구 미래주거 스마트단지 홍보 특화영상 기획 및 구축. AI 에이전트 협업 콘티 추출과 생성 AI 연계 파이프라인으로 미래 주거 공간의 특화 기능을 연출하였습니다.',
             gallery: [
-                '/project_sh.jpg'
+                '/projects/sh_senior_1.png',
+                '/projects/sh_senior_2.png',
+                '/projects/sh_senior_3.png',
+                '/projects/sh_childcare_1.png',
+                '/projects/sh_childcare_2.png',
+                '/projects/sh_childcare_3.png'
             ]
         },
         'ktg': {
