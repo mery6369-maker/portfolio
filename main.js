@@ -202,16 +202,16 @@ function initPortfolioTabsAndModal() {
             category: 'AI Media Art / Motion',
             roles: 'AI Art Direction, Motion Design & Editing',
             tools: 'MidJourney, Runway, Suno, Adobe After Effects',
-            img: '/projects/mediacalendar_1.png',
+            img: '/projects/mediacalendar_autumn_bloom.gif',
             portfolioUrl: 'https://chayein.myportfolio.com/mediacalendar',
             youtubeLinks: [
                 { label: '▶ Watch Full Video (YouTube)', url: 'https://youtu.be/VhjY9sgRTH8' }
             ],
             desc: '구독형 미디어아트 상품 Media Calendar 제작에 참여하였습니다. 57종의 테마 콘텐츠 중 13종의 콘텐츠를 제작하였으며 MidJourney, Runway, Suno, Adobe After Effects를 활용하였습니다.',
             gallery: [
-                '/projects/mediacalendar_1.png',
-                '/projects/mediacalendar_2.png',
-                '/projects/mediacalendar_3.png'
+                '/projects/mediacalendar_autumn_bloom.gif',
+                '/projects/mediacalendar_reel_1.png',
+                '/projects/mediacalendar_reel_2.png'
             ]
         },
         'mbc': {
@@ -260,7 +260,7 @@ function initPortfolioTabsAndModal() {
             gallery: [
                 '/projects/scube_thumb1.png',
                 '/projects/scube_thumb2.png',
-                '/projects/scube_thumb3.mp4',
+                '/projects/scube_watch.gif',
                 '/projects/scube_thumb4.png',
                 '/projects/scube_thumb5.png',
                 '/projects/scube_thumb6.png'
@@ -273,10 +273,18 @@ function initPortfolioTabsAndModal() {
             category: 'XR / Spatial Advertising',
             roles: 'XR 가상 스튜디오 3D 연출, 시네마틱 카메라 트래킹, 컴포지팅',
             tools: 'Unreal Engine 5, After Effects, Disguise',
-            img: '',
+            img: '/projects/xr_yeoksam_1.gif',
             portfolioUrl: 'https://chayein.myportfolio.com/xradvertise',
             desc: 'XR 가상 스튜디오 기반 공간 광고 영상 기획 및 실시간 시네마틱 카메라 트래킹 합성 프로젝트입니다. 실시간 3D 그래픽과 실사 인물의 정밀한 카메라 싱크 연출을 구현하였습니다.',
-            gallery: []
+            gallery: [
+                '/projects/xr_yeoksam_1.gif',
+                '/projects/xr_yeoksam_2.gif',
+                '/projects/xr_gangnam_1.png',
+                '/projects/xr_hongdae_1.png',
+                '/projects/xr_ooh_1.png',
+                '/projects/xr_ooh_2.png',
+                '/projects/xr_ooh_3.png'
+            ]
         },
         'raemian': {
             title: 'RAEMIAN 송도역 센트리폴',
