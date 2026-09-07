@@ -222,8 +222,10 @@ function initPortfolioTabsAndModal() {
             roles: 'Conti(기획), 3D Design, 2D Design, VFX, Edit / Compositing / Color Grading',
             tools: 'After Effects, Illustrator, Unreal Engine, Blender',
             img: '/project_mbc.png',
-            videoSrc: '/videos/mbc.mp4',
             portfolioUrl: 'https://chayein.myportfolio.com/mbc-pdsgone',
+            youtubeLinks: [
+                { label: '▶ Watch Outro Video (YouTube)', url: 'https://youtu.be/wKvWNysGSEA' }
+            ],
             desc: "MBC의 AI PD 엠파고가 연출하는 예능 프로그램 'PD가 사라졌다'의 방송 아웃트로를 제작하였습니다. 기술과 디스토피아적 분위기를 강조하기 위해 2D&3D 모션 위에 CRT 기법을 활용하여 연출하였습니다.",
             gallery: ['/project_mbc.png', '/mbc_2.png', '/mbc_3.png']
         },
@@ -235,8 +237,10 @@ function initPortfolioTabsAndModal() {
             roles: 'Conti(기획), 3D Design, 2D Design, Motion, Edit / Compositing / Color Grading',
             tools: 'After Effects, Illustrator, Photoshop, Unreal Engine, Blender',
             img: '/projects/pepsi_custom_1.gif',
-            videoSrc: '/videos/pepsi.mp4',
             portfolioUrl: 'https://chayein.myportfolio.com/pepsionline',
+            youtubeLinks: [
+                { label: '▶ Watch Promo Video (YouTube)', url: 'https://youtu.be/3RJKS44KnhI' }
+            ],
             desc: '펩시의 신제품을 알리기 위해 기획된 온라인 팝업스토어 인트로 영상 제작. 신제품 3종의 매력을 담아내고 펩시 특유의 청량한 브랜드 이미지를 구현했습니다.',
             gallery: [
                 '/projects/pepsi_custom_1.gif',
@@ -275,6 +279,9 @@ function initPortfolioTabsAndModal() {
             tools: 'Unreal Engine 5, After Effects, Disguise',
             img: '/projects/xr_yeoksam_1.gif',
             portfolioUrl: 'https://chayein.myportfolio.com/xradvertise',
+            youtubeLinks: [
+                { label: '▶ Watch XR Video (YouTube)', url: 'https://youtu.be/3Hd7SorEl0E' }
+            ],
             desc: 'XR 가상 스튜디오 기반 공간 광고 영상 기획 및 실시간 시네마틱 카메라 트래킹 합성 프로젝트입니다. 실시간 3D 그래픽과 실사 인물의 정밀한 카메라 싱크 연출을 구현하였습니다.',
             gallery: [
                 '/projects/xr_yeoksam_1.gif',
