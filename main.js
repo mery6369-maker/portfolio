@@ -157,6 +157,28 @@ function initPortfolioTabsAndModal() {
     // 14 Commercial Projects — only referencing assets that actually exist in /public
     // Projects without local assets have img: '' (user will provide later)
     const projectDataMap = {
+        'elypecs': {
+            title: 'ELYPECS 2D Motion Graphics [In-House]',
+            client: 'Olim Planet (올림플래닛 인하우스)',
+            year: '2023 - 2024',
+            category: '2D Motion Graphics / In-House UI/UX',
+            roles: 'Conti(기획), 2D Design, Motion Design, Edit / Compositing / Color Grading',
+            tools: 'After Effects, Illustrator, Unreal Engine',
+            img: '/projects/elypecs_preview.gif',
+            videoSrc: '/projects/elypecs_landing_sub.mp4',
+            portfolioUrl: 'https://chayein.myportfolio.com/elypecs-com',
+            desc: '(구)ELYPECS.com 메인 랜딩페이지의 인터랙티브 웹 모션 비디오 및 엘리펙스 비즈니스센터(Brand Space) 인트로 2D 모션그래픽 영상 제작 프로젝트입니다. 가상공간 전환 연출, 주요 기능(AI 휴먼, 화상채팅, 3D 뷰어)의 오브젝트 시각화, 감각적인 타이포그래피 모션으로 사용자 경험과 기술력을 효과적으로 전달하였습니다.',
+            gallery: [
+                '/projects/elypecs_landing_sub.mp4',
+                '/projects/elypecs_bs_intro.mp4',
+                '/projects/elypecs_preview.gif',
+                '/projects/elypecs_bs_1.png',
+                '/projects/elypecs_bs_2.png',
+                '/projects/elypecs_bs_3.png',
+                '/projects/elypecs_landing_still_1.png',
+                '/projects/elypecs_landing_still_2.png'
+            ]
+        },
         'clock': {
             title: 'Clock Gear Symphony',
             client: 'Personal Project',
@@ -495,7 +517,21 @@ function initPortfolioTabsAndModal() {
                     mediaDiv.className = 'w-full aspect-[16/10] bg-black border border-hairline rounded overflow-hidden group/still relative';
                     
                     if (mediaSrc.endsWith('.mp4') || mediaSrc.endsWith('.webm')) {
-                        mediaDiv.innerHTML = `<video src="${mediaSrc}" autoplay loop muted playsinline class="w-full h-full object-cover group-hover/still:scale-105 transition-transform duration-300"></video>`;
+                        mediaDiv.innerHTML = `<video src="${mediaSrc}" autoplay loop muted playsinline class="w-full h-full object-cover group-hover/still:scale-105 transition-transform duration-300"></video><div class="absolute bottom-2 right-2 bg-black/70 text-white/90 text-[11px] font-mono px-2 py-0.5 rounded border border-white/20 backdrop-blur-sm pointer-events-none">▶ Play Video</div>`;
+                        mediaDiv.classList.add('cursor-pointer');
+                        mediaDiv.addEventListener('click', () => {
+                            if (modalVideo) {
+                                if (modalIframe) {
+                                    modalIframe.src = '';
+                                    modalIframe.classList.add('is-hidden');
+                                }
+                                modalVideo.src = mediaSrc;
+                                modalVideo.classList.remove('is-hidden');
+                                if (modalPlayBtn) modalPlayBtn.classList.add('is-hidden');
+                                modalVideo.play().catch(() => {});
+                                modalVideo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        });
                     } else {
                         mediaDiv.innerHTML = `<img src="${mediaSrc}" class="w-full h-full object-cover group-hover/still:scale-105 transition-transform duration-300">`;
                     }
