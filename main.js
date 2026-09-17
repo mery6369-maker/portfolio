@@ -164,18 +164,17 @@ function initPortfolioTabsAndModal() {
             category: '2D Motion Graphics / UI·UX Interaction',
             roles: 'Conti(기획), 2D Design, Motion Design, Edit / Compositing',
             tools: 'After Effects, Illustrator, Unreal Engine',
-            img: '/projects/elypecs_landing_motion.gif',
+            img: '/projects/elypecs_landing_main.png',
             portfolioUrl: 'https://chayein.myportfolio.com/elypecs-com',
             youtubeLinks: [
                 { label: '▶ Watch Landing Motion (YouTube)', url: 'https://youtu.be/pS4fH67jQ6k' }
             ],
             desc: '(구)ELYPECS.com 메인 랜딩페이지를 위한 2D 모션그래픽 인터랙티브 영상입니다. HMD를 착용한 유저가 현실에서 메타버스 가상공간으로 전환되는 몰입감 넘치는 연출과 함께 AI 휴먼, 화상 채팅, 3D 뷰어, TTS 등 엘리펙스의 핵심 기술을 감각적인 그래픽 오브젝트 모션으로 시각화하였습니다.',
             gallery: [
-                '/projects/elypecs_landing_motion.gif',
-                '/projects/elypecs_landing_still_1.png',
-                '/projects/elypecs_landing_still_2.png',
-                '/projects/elypecs_landing_still_3.png',
-                '/projects/elypecs_landing_still_4.png'
+                '/projects/elypecs_landing_main.png',
+                '/projects/elypecs_landing_ep1.png',
+                '/projects/elypecs_landing_ep2.png',
+                '/projects/elypecs_landing_ep3.png'
             ]
         },
         'elypecs-bs': {
