@@ -164,16 +164,18 @@ function initPortfolioTabsAndModal() {
             category: '2D Motion Graphics / UI·UX Interaction',
             roles: 'Conti(기획), 2D Design, Motion Design, Edit / Compositing',
             tools: 'After Effects, Illustrator, Unreal Engine',
-            img: '/projects/elypecs_preview.gif',
+            img: '/projects/elypecs_landing_motion.gif',
             portfolioUrl: 'https://chayein.myportfolio.com/elypecs-com',
             youtubeLinks: [
                 { label: '▶ Watch Landing Motion (YouTube)', url: 'https://youtu.be/pS4fH67jQ6k' }
             ],
             desc: '(구)ELYPECS.com 메인 랜딩페이지를 위한 2D 모션그래픽 인터랙티브 영상입니다. HMD를 착용한 유저가 현실에서 메타버스 가상공간으로 전환되는 몰입감 넘치는 연출과 함께 AI 휴먼, 화상 채팅, 3D 뷰어, TTS 등 엘리펙스의 핵심 기술을 감각적인 그래픽 오브젝트 모션으로 시각화하였습니다.',
             gallery: [
-                '/projects/elypecs_preview.gif',
+                '/projects/elypecs_landing_motion.gif',
                 '/projects/elypecs_landing_still_1.png',
-                '/projects/elypecs_landing_still_2.png'
+                '/projects/elypecs_landing_still_2.png',
+                '/projects/elypecs_landing_still_3.png',
+                '/projects/elypecs_landing_still_4.png'
             ]
         },
         'elypecs-bs': {
@@ -183,12 +185,13 @@ function initPortfolioTabsAndModal() {
             category: '2D Motion Graphics / Brand Space Intro',
             roles: 'Conti(기획), 2D Design, Motion Design, Color Grading',
             tools: 'After Effects, Illustrator, Premiere Pro',
-            img: '/projects/elypecs_bs_intro1.png',
+            img: '/projects/elypecs_bs_thumb_end.png',
             youtubeLinks: [
                 { label: '▶ Watch BS Intro Video (YouTube)', url: 'https://youtu.be/xKWao8ZfaZE' }
             ],
             desc: '엘리펙스 비즈니스센터(Brand Space) 브랜드 스페이스 진입을 위한 인트로 2D 모션그래픽 영상입니다. 직관적이고 세련된 타이포그래피와 공간 브랜딩 그래픽 트랜지션을 통해 비즈니스센터의 전문성과 미래지향적 가치를 효과적으로 전달하도록 기획·제작하였습니다.',
             gallery: [
+                '/projects/elypecs_bs_thumb_end.png',
                 '/projects/elypecs_bs_intro1.png',
                 '/projects/elypecs_bs_intro2.png',
                 '/projects/elypecs_bs_intro3.png'
