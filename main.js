@@ -314,14 +314,14 @@ function initPortfolioTabsAndModal() {
             client: 'XR Commercial',
             year: '2024',
             category: 'XR / Spatial Advertising',
-            roles: 'XR 가상 스튜디오 3D 연출, 시네마틱 카메라 트래킹, 컴포지팅',
-            tools: 'Unreal Engine 5, After Effects, Disguise',
+            roles: '기획, 3D모션, 컴포지팅',
+            tools: 'Unreal Engine 5, Blender, After Effects',
             img: '/projects/xr_yeoksam_1.gif',
             portfolioUrl: 'https://chayein.myportfolio.com/xradvertise',
             youtubeLinks: [
                 { label: '▶ Watch XR Video (YouTube)', url: 'https://youtu.be/3Hd7SorEl0E' }
             ],
-            desc: 'XR 가상 스튜디오 기반 공간 광고 영상 기획 및 실시간 시네마틱 카메라 트래킹 합성 프로젝트입니다. 실시간 3D 그래픽과 실사 인물의 정밀한 카메라 싱크 연출을 구현하였습니다.',
+            desc: '옥외광고 미디어 사업자와의 제휴로 보급 확산용 XR옥외광고 상품을 광고시장에 확산하고자 하는 목적의 사업입니다.\n위치별 주요 시청자의 특징을 분석하여 가볍게 관심을 갖고 즐길 수 있는 콘텐츠로 기획하였습니다.\nSite : 강남역 G-Vision | 역삼 역삼빌딩 | 홍대 토니모리 전광판',
             gallery: [
                 '/projects/xr_yeoksam_1.gif',
                 '/projects/xr_yeoksam_2.gif',
