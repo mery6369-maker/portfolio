@@ -18,7 +18,6 @@ dist-ssr/
 # Large media files exceeding GitHub 100MB limits
 public/videos/*.mp4
 public/projects/*.mp4
-!public/projects/elypecs_*.mp4
 
 # Editor & System files
 .vscode/*
