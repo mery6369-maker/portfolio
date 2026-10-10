@@ -175,7 +175,14 @@ function initPortfolioTabsAndModal() {
                 '/projects/elypecs_landing_ep1.png',
                 '/projects/elypecs_landing_ep2.png',
                 '/projects/elypecs_landing_ep3.png'
-            ]
+            ],
+            specs: {
+          "target": "플랫폼 신규 방문자 및 잠재 고객 대상, 3D 가상공간 구축 SaaS 핵심 기능을 직관적으로 설명",
+          "role": "1인 총괄 100% (콘티 기획, 2D UI 일러스트 디자인, 모션 인터랙션 제작, 컴포지팅)",
+          "process": "공간 선택 ➔ 에디터 편집 ➔ 통계 대시보드의 3단계 여정 도출 ➔ 단계별 UI 인터랙션을 2D 모션으로 시각화",
+          "tools": "After Effects, Illustrator",
+          "result": "구 ELYPECS.com 공식 메인 랜딩페이지 상단 기능 소개 영상으로 라이브 적용, 서비스 기능 이해도 대폭 개선"
+}
         },
         'elypecs-bs': {
             title: 'ELYPECS 비즈니스센터 인트로',
@@ -194,14 +201,21 @@ function initPortfolioTabsAndModal() {
                 '/projects/elypecs_bs_intro1.png',
                 '/projects/elypecs_bs_intro2.png',
                 '/projects/elypecs_bs_intro3.png'
-            ]
+            ],
+            specs: {
+          "target": "기업 고객(B2B) 대상, 가상 브랜드 스페이스 '비즈니스센터' 진입 시 전문성과 신뢰도를 전달하는 브랜드 인트로",
+          "role": "1인 총괄 100% (콘티 기획, 2D 그래픽 디자인, 모션그래픽, 컬러 그레이딩)",
+          "process": "기업 브랜드 아이덴티티 분석 ➔ 모던한 타이포그래피 애니메이션 설계 ➔ 공간 진입감을 높이는 그래픽 트랜지션 연출",
+          "tools": "After Effects, Illustrator, Premiere Pro",
+          "result": "엘리펙스 비즈니스센터 공식 진입 인트로 영상으로 적용, 브랜드 인지도 및 사용자 진입 몰입도 향상"
+}
         },
         'clock': {
             title: 'Clock Gear Symphony',
             client: 'Personal Project',
             year: '2025',
             category: '3D Motion / Mechanics',
-            roles: '3D Modeling, Rigging, Motion Design & Rendering',
+            roles: '개인 R&D',
             tools: 'Blender, After Effects',
             img: '/projects/clock_main.png',
             portfolioUrl: 'https://chayein.myportfolio.com/clock-gear-symphony',
@@ -213,15 +227,22 @@ function initPortfolioTabsAndModal() {
                 '/projects/clock_thumb1.jpg',
                 '/projects/clock_thumb2.png',
                 '/projects/clock_thumb3.png'
-            ]
+            ],
+            specs: {
+          "target": "3D 모션그래픽스 커뮤니티 및 숏폼 시청자 대상, 정밀 기계 메커니즘의 기구학적 아름다움을 보여주는 기술 스터디",
+          "role": "개인 R&D",
+          "process": "정밀 시계 무브먼트 부품 구조 분석 ➔ 기어 톱니 간 맞물림 기구학 리깅 ➔ 금속 재질감 라이팅 및 매크로 샷 렌더링",
+          "tools": "Blender, After Effects",
+          "result": "정교한 3D 역학 제어 및 하이엔드 렌더링 역량 검증, 유튜브 숏폼 포트폴리오 쇼케이스 발행"
+}
         },
         'endangered': {
             title: '국립생태원 멸종위기종 Ai 아나몰픽',
             client: '국립생태원',
             year: '2026',
             category: 'AI Anamorphic / 3D Art',
-            roles: 'AI 파이프라인, Art Direction, 아나몰픽 미디어 구축',
-            tools: 'ComfyUI, Unreal Engine 5, After Effects',
+            roles: '1인 총괄 100% (기획, 제작)',
+            tools: 'Blender, After Effects, Photoshop, Runway, Veo',
             img: '/projects/endangered_still_main.png',
             portfolioUrl: 'https://chayein.myportfolio.com/endangered-species',
             youtubeLinks: [
@@ -232,7 +253,15 @@ function initPortfolioTabsAndModal() {
                 '/projects/endangered_thumb1.png',
                 '/projects/endangered_thumb2.png',
                 '/projects/endangered_thumb3.png'
-            ]
+            ],
+            specs: {
+          "target": "국립생태원 방문객 대상, 멸종위기종 보호 메시지를 전달하는 3D 입체 착시 아나몰픽 미디어아트",
+          "role": "1인 총괄 100% (기획, 제작)",
+          "process": "관람객 시야각(FOV) 착시 궤적 계산 ➔ 동물 선정 및 이미지 제작 ➔ Ai 비디오 생성 ➔ AE 후반 합성",
+          "tools": "Blender, After Effects, Photoshop, Runway, Veo",
+          "aiScope": "동물의 사실적 털 질감 생성 및 비디오 업스케일링. 3D 카메라 가이드를 결합해 AI 특유의 형태 왜곡 방지",
+          "result": "국립생태원 미디어 전광판 공식 송출 완수, 3D+AI 하이브리드 공정으로 기존 3D 단독 대비 제작 리드타임 45% 단축"
+}
         },
         'mediacalendar': {
             title: 'Ai MEDIA ART [ MEDIA CALENDAR ]',
@@ -240,7 +269,7 @@ function initPortfolioTabsAndModal() {
             year: '2023',
             category: 'AI Media Art / Motion',
             roles: 'AI Art Direction, Motion Design & Editing',
-            tools: 'MidJourney, Runway, Suno, Adobe After Effects',
+            tools: 'Midjourney, Runway, Adobe After Effects, Photoshop',
             img: '/projects/mediacalendar_autumn_bloom.gif',
             portfolioUrl: 'https://chayein.myportfolio.com/mediacalendar',
             youtubeLinks: [
@@ -251,7 +280,15 @@ function initPortfolioTabsAndModal() {
                 '/projects/mediacalendar_autumn_bloom.gif',
                 '/projects/mediacalendar_reel_1.png',
                 '/projects/mediacalendar_reel_2.png'
-            ]
+            ],
+            specs: {
+          "target": "도심 보행자 및 옥외 전광판 시청자 대상, 계절별 테마를 담은 구독형 옥외 미디어아트 콘텐츠",
+          "role": "미디어 디렉팅 및 영상 제작 (전체 57종 테마 중 핵심 13종 콘텐츠 전담 제작 100%)",
+          "process": "계절별 감성 키워드 도출 ➔ Midjourney 비주얼 프롬프팅 ➔ Runway 모션 비디오 생성 ➔ AE 타이포그래피 합성",
+          "tools": "Adobe After Effects, Photoshop | Midjourney, Runway",
+          "aiScope": "초기 비주얼 룩 개발(Midjourney), 생성형 비디오 모션(Runway) 전방위 파이프라인 적용",
+          "result": "서울 시내 대형 옥외 전광판 네트워크(MOU) 대규모 도심 송출 성공, 단독 13종 콘텐츠 상용 납기 완수"
+}
         },
         'mbc': {
             title: "MBC 'PD가 사라졌다' OUTRO",
@@ -266,7 +303,14 @@ function initPortfolioTabsAndModal() {
                 { label: '▶ Watch Outro Video (YouTube)', url: 'https://youtu.be/wKvWNysGSEA' }
             ],
             desc: "MBC의 AI PD 엠파고가 연출하는 예능 프로그램 'PD가 사라졌다'의 방송 아웃트로를 제작하였습니다. 기술과 디스토피아적 분위기를 강조하기 위해 2D&3D 모션 위에 CRT 기법을 활용하여 연출하였습니다.",
-            gallery: ['/project_mbc.png', '/mbc_2.png', '/mbc_3.png']
+            gallery: ['/project_mbc.png', '/mbc_2.png', '/mbc_3.png'],
+            specs: {
+          "target": "지상파 방송 시청자 대상, 국내 최초 AI PD 예능 프로그램의 디스토피아적 세계관을 각인시키는 방송 아웃트로",
+          "role": "1인 총괄 100% (콘티 기획, 3D 디자인, 2D 디자인, VFX, 편집/컴포지팅, 컬러 그레이딩)",
+          "process": "AI 알고리즘과 레트로 방송 감성의 충돌 기획 ➔ UE5/Blender 3D 에셋 모델링 ➔ 아날로그 CRT 디스플레이 질감 VFX 합성",
+          "tools": "After Effects, Illustrator, Unreal Engine, Blender",
+          "result": "MBC 지상파 방송 본편 엔딩 아웃트로로 정규 온에어 송출, 프로그램의 독창적 아이덴티티 구축 기여"
+}
         },
         'pepsi': {
             title: 'Pepsi Online Pop-up',
@@ -285,7 +329,14 @@ function initPortfolioTabsAndModal() {
                 '/projects/pepsi_custom_1.gif',
                 '/projects/pepsi_custom_2.png',
                 '/projects/pepsi_custom_3.png'
-            ]
+            ],
+            specs: {
+          "target": "MZ세대 펩시 소비자 대상, 펩시 신제품 3종의 청량감과 브랜드 이미지를 극대화하는 가상 팝업 인트로",
+          "role": "기획 및 영상 총괄 100% (콘티 기획, 3D 디자인, 2D 키비주얼, 모션그래픽, 사운드 싱크)",
+          "process": "펩시 탄산의 폭발적 에너지 연출 ➔ 제품 3D 캔 모델링 및 유체 이펙트 ➔ 다이내믹 카메라 워크 및 모션 템포 조율",
+          "tools": "Unreal Engine, Blender, After Effects, Photoshop",
+          "result": "롯데칠성 펩시 온라인 팝업스토어 메인 공식 인트로로 정식 릴리즈, 방문자 체류시간 증대 및 브랜드 호감도 향상"
+}
         },
         'scube': {
             title: 'SCUBE LAB Online Showroom',
@@ -307,14 +358,21 @@ function initPortfolioTabsAndModal() {
                 '/projects/scube_thumb4.png',
                 '/projects/scube_thumb5.png',
                 '/projects/scube_thumb6.png'
-            ]
+            ],
+            specs: {
+          "target": "B2B 고객 및 전시 관람객 대상, 디지털 사이니지 하드웨어의 입체 표출력을 증명하는 3D 가상 쇼룸 영상",
+          "role": "1인 총괄 100% (콘티 기획, 3D/2D 디자인, 3개 테마 공간 연출, 모션 편집)",
+          "process": "워치/패션 등 3개 테마 공간 기획 ➔ 공간별 하이엔드 오브제 3D 모델링 ➔ 럭셔리 쇼룸 인터랙션 시각화",
+          "tools": "Unreal Engine, Blender, After Effects, Illustrator",
+          "result": "사이니지 전문 기업 Scube Lab 공식 온라인 쇼룸 메인 쇼케이스 영상으로 채택"
+}
         },
         'xr': {
             title: 'XR옥외광고 제휴사업',
             client: 'XR Commercial',
             year: '2024',
             category: 'XR / Spatial Advertising',
-            roles: '기획, 3D모션, 컴포지팅',
+            roles: '기획, 3D 모션, 컴포지팅',
             tools: 'Unreal Engine 5, Blender, After Effects',
             img: '/projects/xr_yeoksam_1.gif',
             portfolioUrl: 'https://chayein.myportfolio.com/xradvertise',
@@ -330,7 +388,14 @@ function initPortfolioTabsAndModal() {
                 '/projects/xr_ooh_1.png',
                 '/projects/xr_ooh_2.png',
                 '/projects/xr_ooh_3.png'
-            ]
+            ],
+            specs: {
+          "target": "강남·역삼·홍대 주요 상권 유동인구 대상, 도심 옥외 전광판에 몰입감을 주는 입체 착시 3D 미디어 콘텐츠",
+          "role": "기획, 3D 모션, 컴포지팅",
+          "process": "상권별 유동인구 시청 특성 분석 ➔ 전광판 곡률/앵글 실측 ➔ UE5 3D 입체 카메라 애니메이션 ➔ 합성 피니싱",
+          "tools": "Unreal Engine 5, Blender, After Effects",
+          "result": "강남역 G-Vision, 역삼 역삼빌딩, 홍대 토니모리 전광판 3개소 동시 송출, 보행자 시선 집중 및 바이럴 유도"
+}
         },
         'raemian': {
             title: 'RAEMIAN 송도역 센트리폴',
@@ -338,7 +403,7 @@ function initPortfolioTabsAndModal() {
             year: '2024',
             category: '3D Architecture / Spatial Film',
             roles: 'Spatial Lighting, Environment Rendering & Texture Mapping',
-            tools: 'Unreal Engine 5, Blender',
+            tools: 'Unreal Engine 5, Blender, After Effects, Premiere Pro',
             img: '/projects/raemian_still_1.png',
             portfolioUrl: 'https://chayein.myportfolio.com/raemian',
             youtubeLinks: [
@@ -354,15 +419,22 @@ function initPortfolioTabsAndModal() {
                 '/projects/raemian_02.gif',
                 '/projects/raemian_03.gif',
                 '/projects/raemian_04.gif'
-            ]
+            ],
+            specs: {
+          "target": "하이엔드 아파트 분양 고객 대상, 래미안 브랜드의 프리미엄 건축 공간감과 미래 라이프스타일 전달",
+          "role": "3D 공간 라이팅, 환경 렌더링, 텍스처 매핑 및 시네마틱 카메라 시퀀스 전담",
+          "process": "건축 데이터 기반 공간 구축 ➔ 자연광 시간대별 조도 시뮬레이션 ➔ 시네마틱 워크스루 카메라 연출",
+          "tools": "Unreal Engine 5, Blender, After Effects, Premiere Pro",
+          "result": "삼성물산 래미안 송도역 센트리폴 공식 홍보 채널 상용 릴리즈, 최고 수준의 건축 비주얼 퀄리티 확보"
+}
         },
         'sh': {
             title: 'SH형 미래주거모델 특화영상',
             client: '서울주택도시개발공사',
             year: '2026',
             category: 'AI Video / Motion Graphics',
-            roles: 'Storyboards, AI Video Pipeline, Motion Graphics & Edit',
-            tools: 'Kling 3.0, Magnific Spaces, Manus, Gemini, AE',
+            roles: '스토리보드 기획, AI 비디오 파이프라인 구축, 이미지 및 영상 제작, 인포그래픽 모션 편집',
+            tools: 'After Effects, Premiere Pro, Unreal Engine 5 | Magnific, Manus, Gemini',
             img: '/projects/sh_senior_1.png',
             videoSrc: '',
             youtubeLinks: [
@@ -376,15 +448,23 @@ function initPortfolioTabsAndModal() {
                 '/projects/sh_childcare_1.png',
                 '/projects/sh_childcare_2.png',
                 '/projects/sh_childcare_3.png'
-            ]
+            ],
+            specs: {
+          "target": "SH공공주택 입주 예정자(고령·양육가구) 대상, 미래 스마트단지 주거 솔루션 직관적 홍보",
+          "role": "스토리보드 기획, AI 비디오 파이프라인 구축, 이미지 및 영상 제작, 인포그래픽 모션 편집",
+          "process": "세대별 페르소나 분석 ➔ 콘티 도출 ➔ UE5 아파트 내부 구현 ➔ Ai 이미지/영상 생성 ➔ 인포그래픽 2D 모션 결합",
+          "tools": "After Effects, Premiere Pro, Unreal Engine 5 | Magnific, Manus, Gemini",
+          "aiScope": "Gemini/Manus를 활용한 씬 콘티 시나리오 추출, Magnific 고해상도 이미지 및 비디오 생성, TTS 생성",
+          "result": "실사 세트 촬영 대비 제작 예산 약 80% 절감, 복잡한 스마트 주거 기술을 감성적이고 직관적인 비주얼로 시각화"
+}
         },
         'ktg': {
             title: 'KT&G 릴 미니멀리움 마곡 미디어아트',
             client: 'KT&G / Olim Planet',
             year: '2026.01',
             category: 'Media Art / 3D Motion',
-            roles: '3D Art Direction, 3D Rendering & Compositing',
-            tools: 'Unreal Engine 5, Blender, After Effects',
+            roles: '아트 디렉팅, Ai 생성 및 컴포지팅 (기여도 100%)',
+            tools: 'Magnific, After Effects',
             img: '/projects/ktg_custom_1.png',
             youtubeLinks: [
                 { label: '▶ Watch Video (YouTube)', url: 'https://youtu.be/8ooxjeFhQjM' }
@@ -394,14 +474,22 @@ function initPortfolioTabsAndModal() {
                 '/projects/ktg_custom_1.png',
                 '/projects/ktg_custom_2.png',
                 '/projects/ktg_custom_3.png'
-            ]
+            ],
+            specs: {
+          "target": "스토어 방문객 대상, 정제된 미니멀리즘과 휴식을 전달하는 공간 몰입형 미디어아트 연출",
+          "role": "아트 디렉팅, Ai 생성 및 컴포지팅 (기여도 100%)",
+          "process": "'Waves of Purification' 콘셉트 ➔ 물결치는 유리의 곡선과 빛의 굴절 물리 시뮬레이션 ➔ 싱그러운 녹음의 실루엣 연출",
+          "tools": "Magnific, After Effects",
+          "aiScope": "글래스 굴절 너머의 싱그러운 녹음 이미지 및 영상 제작",
+          "result": "KT&G 릴 미니멀리움 마곡 플래그십 스토어 대형 디스플레이에 공식 상설 미디어아트로 상영"
+}
         },
         'summerroom': {
             title: 'SUMMER ROOM',
             client: 'Personal Project',
             year: '2024',
             category: '3D Motion / Spatial Film',
-            roles: '3D Modeling, Spatial Lighting & Render',
+            roles: '개인 R&D',
             tools: 'Blender, After Effects',
             img: '/projects/summerroom_thumb_1.jpg',
             portfolioUrl: 'https://chayein.myportfolio.com/summer-room',
@@ -411,7 +499,14 @@ function initPortfolioTabsAndModal() {
             desc: '여름의 청량한 조도와 여유로운 공간감을 표현한 3D 시네마틱 룸 렌더링 프로젝트입니다.',
             gallery: [
                 '/projects/summerroom_thumb_1.jpg'
-            ]
+            ],
+            specs: {
+          "target": "공간 비주얼 아티스트 및 시청자 대상, 여름의 청량한 빛과 조도를 3D 공간으로 구현한 시네마틱 필름 스터디",
+          "role": "개인 R&D",
+          "process": "창가 햇살과 커튼의 부드러운 움직임 기획 ➔ 패브릭 물리 시뮬레이션 및 부드러운 간접광(GI) 렌더링",
+          "tools": "Blender, After Effects",
+          "result": "감성적 공간 라이팅 연출력 입증, 유튜브 숏폼 포트폴리오 발행"
+}
         }
     };
 
@@ -452,6 +547,8 @@ function initPortfolioTabsAndModal() {
     const modalDesc = document.getElementById('modal-desc');
     const modalGalleryGrid = document.getElementById('modal-gallery-grid');
     const modalLinksWrapper = document.getElementById('modal-youtube-links-wrapper');
+    const modalSpecsWrapper = document.getElementById('modal-specs-wrapper');
+    const modalSpecsGrid = document.getElementById('modal-specs-grid');
 
     // Convert YouTube URL to embed URL (supporting standard, short, and Shorts URLs)
     function toYouTubeEmbed(url) {
@@ -525,6 +622,40 @@ function initPortfolioTabsAndModal() {
         if (modalRoles) modalRoles.textContent = `Roles: ${data.roles || '-'}`;
         if (modalTools) modalTools.textContent = `Tools: ${data.tools || '-'}`;
         if (modalDesc) modalDesc.textContent = data.desc;
+
+        // Render structured specs breakdown grid (6 Key Core Items)
+        if (modalSpecsGrid && modalSpecsWrapper) {
+            modalSpecsGrid.innerHTML = '';
+            if (data.specs) {
+                modalSpecsWrapper.classList.remove('is-hidden');
+                const specConfig = [
+                    { key: 'target', icon: '🎯', label: '목적 & 타깃' },
+                    { key: 'role', icon: '👤', label: '역할 & 기여도' },
+                    { key: 'process', icon: '💡', label: '기획 & 제작 과정' },
+                    { key: 'tools', icon: '🛠️', label: '제작 Tool & AI Tool' },
+                    { key: 'aiScope', icon: '🤖', label: 'AI 활용 방식 & 범위' },
+                    { key: 'result', icon: '📈', label: '게시 성과 및 결과' }
+                ];
+
+                specConfig.forEach(cfg => {
+                    const val = data.specs[cfg.key];
+                    if (val && typeof val === 'string' && val.trim() !== '') {
+                        const card = document.createElement('div');
+                        card.className = 'bg-surface-1 border border-hairline rounded-lg p-3 space-y-1 hover:border-white/30 transition-colors';
+                        card.innerHTML = `
+                            <div class="flex items-center gap-1.5 font-mono text-[11px] font-bold text-white">
+                                <span class="text-xs">${cfg.icon}</span>
+                                <span>${cfg.label}</span>
+                            </div>
+                            <p class="text-xs text-ink-muted leading-relaxed font-light pl-4">${val}</p>
+                        `;
+                        modalSpecsGrid.appendChild(card);
+                    }
+                });
+            } else {
+                modalSpecsWrapper.classList.add('is-hidden');
+            }
+        }
 
         if (modalGalleryGrid) {
             modalGalleryGrid.innerHTML = '';

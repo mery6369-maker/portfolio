@@ -29,3 +29,6 @@ public/projects/*.mp4
 *.njsproj
 *.sln
 *.sw?
+
+# Vercel
+.vercel/
