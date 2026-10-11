@@ -561,9 +561,14 @@
     <!-- Project Detail Modal -->
     <div id="project-modal" class="project-modal">
         <div class="project-modal-content relative p-6 md:p-8 space-y-6">
-            <button id="modal-close-btn" class="absolute top-4 right-4 text-white font-mono text-xs px-3 py-1 bg-surface-2 border border-hairline rounded hover:bg-white hover:text-black transition-colors cursor-pointer z-10">
-                [CLOSE ESC]
-            </button>
+            <div class="absolute top-4 right-4 flex items-center gap-2 z-10">
+                <button id="modal-copy-link-btn" class="text-white font-mono text-xs px-3 py-1 bg-surface-2 border border-hairline rounded hover:bg-white hover:text-black transition-colors cursor-pointer flex items-center gap-1.5" title="프로젝트 직통 링크 복사">
+                    <span>🔗 COPY LINK</span>
+                </button>
+                <button id="modal-close-btn" class="text-white font-mono text-xs px-3 py-1 bg-surface-2 border border-hairline rounded hover:bg-white hover:text-black transition-colors cursor-pointer">
+                    [CLOSE ESC]
+                </button>
+            </div>
 
             <!-- Unified Media Container: Thumbnail + Play Button + Video / YouTube Embed -->
             <div id="modal-media-container" class="w-full aspect-[16/9] rounded-lg overflow-hidden bg-black border border-hairline relative">
