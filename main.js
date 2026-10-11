@@ -113,6 +113,7 @@ function initSlideDotsTracker() {
         const targetEl = document.getElementById(id);
         if (targetEl) {
             targetEl.scrollIntoView({ behavior: 'smooth' });
+            if (window._revealSection) window._revealSection(targetEl);
             if (updateHash && sectionToHash[id]) {
                 history.replaceState(null, '', '#' + sectionToHash[id]);
             }
@@ -518,28 +519,40 @@ function initRoutingAndDeepLinks() {
         if (!hash || hash === '#' || hash === '#main') {
             if (closeModalFn) closeModalFn(false);
             const sec = document.getElementById('section-01');
-            if (sec && hash === '#main') sec.scrollIntoView({ behavior: 'smooth' });
+            if (sec) {
+                if (window._revealSection) window._revealSection(sec);
+                sec.scrollIntoView({ behavior: 'smooth' });
+            }
             return;
         }
 
         if (hash === '#works') {
             if (closeModalFn) closeModalFn(false);
             const sec = document.getElementById('section-02');
-            if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+            if (sec) {
+                if (window._revealSection) window._revealSection(sec);
+                sec.scrollIntoView({ behavior: 'smooth' });
+            }
             return;
         }
 
         if (hash === '#expertise') {
             if (closeModalFn) closeModalFn(false);
             const sec = document.getElementById('section-03');
-            if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+            if (sec) {
+                if (window._revealSection) window._revealSection(sec);
+                sec.scrollIntoView({ behavior: 'smooth' });
+            }
             return;
         }
 
         if (hash === '#contact') {
             if (closeModalFn) closeModalFn(false);
             const sec = document.getElementById('section-04');
-            if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+            if (sec) {
+                if (window._revealSection) window._revealSection(sec);
+                sec.scrollIntoView({ behavior: 'smooth' });
+            }
             return;
         }
 
@@ -549,7 +562,10 @@ function initRoutingAndDeepLinks() {
             const key = match[1];
             if (projectDataMap[key] && openModalByKeyFn) {
                 const sec = document.getElementById('section-02');
-                if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+                if (sec) {
+                    if (window._revealSection) window._revealSection(sec);
+                    sec.scrollIntoView({ behavior: 'smooth' });
+                }
                 openModalByKeyFn(key, false);
                 return;
             }
@@ -897,18 +913,34 @@ function initScrollAnimations() {
     const reveals = document.querySelectorAll('.animate-on-scroll');
     if (!reveals.length) return;
 
+    function revealSection(sec) {
+        if (!sec) return;
+        sec.classList.add('visible');
+        const items = sec.querySelectorAll('.reveal-item');
+        items.forEach(item => item.classList.add('revealed'));
+    }
+
+    // Immediately reveal sections already on or near screen
+    reveals.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 100 && rect.bottom > -100) {
+            revealSection(sec);
+        }
+    });
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                revealSection(entry.target);
             }
         });
     }, {
-        threshold: 0.15,
+        threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     });
 
     reveals.forEach(el => observer.observe(el));
+    window._revealSection = revealSection;
 }
 
 /**
