@@ -31,8 +31,44 @@ function localEditorPlugin() {
           return;
         }
 
+        if (req.url === '/api/upload-image' && req.method === 'POST') {
+          let body = '';
+          req.on('data', chunk => { body += chunk; });
+          req.on('end', () => {
+            try {
+              const { filename, base64Data } = JSON.parse(body);
+              if (!filename || !base64Data) {
+                res.statusCode = 400;
+                res.end(JSON.stringify({ success: false, error: '파일명과 이미지 데이터가 필요합니다.' }));
+                return;
+              }
+              const ext = path.extname(filename) || '.png';
+              const base = path.basename(filename, ext).replace(/[^a-zA-Z0-9_-]/g, '_');
+              const safeName = `${base}_${Date.now()}${ext}`;
+              const targetDir = path.resolve(__dirname, 'public/projects');
+              if (!fs.existsSync(targetDir)) {
+                fs.mkdirSync(targetDir, { recursive: true });
+              }
+              const targetPath = path.join(targetDir, safeName);
+              const rawData = base64Data.replace(/^data:image\/\w+;base64,/, '');
+              fs.writeFileSync(targetPath, Buffer.from(rawData, 'base64'));
+
+              res.setHeader('Content-Type', 'application/json');
+              res.end(JSON.stringify({
+                success: true,
+                url: `/projects/${safeName}`,
+                filename: safeName,
+              }));
+            } catch (err) {
+              res.statusCode = 500;
+              res.end(JSON.stringify({ success: false, error: err.message }));
+            }
+          });
+          return;
+        }
+
         if (req.url === '/api/deploy-vercel' && req.method === 'POST') {
-          exec('git add projects.json && git commit -m "chore: Update portfolio content via Local Visual Editor" && git push origin main', (err, stdout, stderr) => {
+          exec('git add projects.json public/projects && git commit -m "chore: Update portfolio content and assets via Local Visual Editor" && git push origin main', (err, stdout, stderr) => {
             res.setHeader('Content-Type', 'application/json');
             if (err) {
               res.statusCode = 500;

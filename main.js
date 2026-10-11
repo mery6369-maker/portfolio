@@ -653,8 +653,42 @@ function initLocalVisualEditor() {
                 </div>
             </div>
 
+            <!-- 2. 대표 이미지 및 갤러리 관리 -->
             <div class="space-y-2 pt-2 border-t border-hairline">
-                <span class="block text-blue-400 text-[10px] uppercase font-bold">2. 6대 핵심 스펙 (Specs Grid)</span>
+                <span class="block text-blue-400 text-[10px] uppercase font-bold">2. 대표 썸네일 & 갤러리 이미지 교체</span>
+                <div>
+                    <label class="block text-ink-muted mb-1 text-[10px]">대표 썸네일 (Thumbnail)</label>
+                    <div class="flex items-center gap-2.5 bg-[#181818] p-2 rounded border border-hairline">
+                        <img id="ed-thumb-preview" src="" alt="Thumbnail" class="w-16 h-12 object-cover rounded bg-black border border-hairline flex-shrink-0">
+                        <div class="flex-1 min-w-0 space-y-1.5">
+                            <input id="ed-thumb-url" type="text" class="w-full bg-[#121212] border border-hairline rounded px-2 py-1 text-white text-[10px] truncate" placeholder="/projects/...">
+                            <div class="flex items-center gap-2">
+                                <label class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-2 py-1 rounded text-[10px] cursor-pointer inline-flex items-center gap-1 transition-colors">
+                                    <span>📁 이미지 변경</span>
+                                    <input type="file" id="ed-thumb-file-input" accept="image/*" class="hidden">
+                                </label>
+                                <span id="ed-thumb-status" class="text-[10px] text-ink-muted truncate"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-1">
+                        <label class="text-ink-muted text-[10px]">스틸컷 갤러리 (Gallery Stills)</label>
+                        <label class="text-blue-400 hover:text-white text-[10px] cursor-pointer flex items-center gap-0.5">
+                            <span>➕ 스틸컷 추가</span>
+                            <input type="file" id="ed-gallery-file-input" accept="image/*,video/mp4" multiple class="hidden">
+                        </label>
+                    </div>
+                    <div id="ed-gallery-container" class="grid grid-cols-3 gap-2 bg-[#181818] p-2 rounded border border-hairline min-h-[50px] max-h-44 overflow-y-auto">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-2 pt-2 border-t border-hairline">
+                <span class="block text-blue-400 text-[10px] uppercase font-bold">3. 6대 핵심 스펙 (Specs Grid)</span>
                 <div>
                     <label class="block text-ink-muted mb-0.5 text-[10px]">🎯 목적 & 타깃 (target)</label>
                     <textarea id="ed-spec-target" rows="2" class="w-full bg-[#1a1a1a] border border-hairline rounded px-2 py-1 text-white"></textarea>
@@ -710,6 +744,76 @@ function initLocalVisualEditor() {
         projectSelect.appendChild(opt);
     });
 
+    async function uploadSingleFile(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = async () => {
+                try {
+                    const res = await fetch('/api/upload-image', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            filename: file.name,
+                            base64Data: reader.result
+                        })
+                    });
+                    const data = await res.json();
+                    if (data.success) {
+                        resolve(data.url);
+                    } else {
+                        reject(new Error(data.error || '업로드 실패'));
+                    }
+                } catch (err) {
+                    reject(err);
+                }
+            };
+            reader.onerror = () => reject(new Error('파일 읽기 실패'));
+            reader.readAsDataURL(file);
+        });
+    }
+
+    function renderGalleryStills(p) {
+        const container = document.getElementById('ed-gallery-container');
+        if (!container) return;
+        container.innerHTML = '';
+        if (!p.gallery || p.gallery.length === 0) {
+            container.innerHTML = `<span class="col-span-3 text-[10px] text-ink-muted text-center py-2">등록된 추가 스틸컷이 없습니다.</span>`;
+            return;
+        }
+
+        p.gallery.forEach((url, idx) => {
+            const item = document.createElement('div');
+            item.className = 'relative group rounded border border-hairline overflow-hidden aspect-[16/10] bg-black';
+            if (url.endsWith('.mp4') || url.endsWith('.webm')) {
+                item.innerHTML = `
+                    <video src="${url}" muted class="w-full h-full object-cover"></video>
+                    <button type="button" data-idx="${idx}" class="ed-gallery-del-btn absolute top-1 right-1 w-5 h-5 bg-red-600/90 hover:bg-red-500 text-white rounded text-[10px] flex items-center justify-center cursor-pointer shadow">✕</button>
+                    <span class="absolute bottom-1 left-1 text-[8px] bg-black/70 px-1 rounded text-white">VIDEO</span>
+                `;
+            } else {
+                item.innerHTML = `
+                    <img src="${url}" class="w-full h-full object-cover">
+                    <button type="button" data-idx="${idx}" class="ed-gallery-del-btn absolute top-1 right-1 w-5 h-5 bg-red-600/90 hover:bg-red-500 text-white rounded text-[10px] flex items-center justify-center cursor-pointer shadow">✕</button>
+                `;
+            }
+            container.appendChild(item);
+        });
+
+        container.querySelectorAll('.ed-gallery-del-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const idx = parseInt(btn.getAttribute('data-idx'), 10);
+                p.gallery.splice(idx, 1);
+                renderGalleryStills(p);
+                showToast('🗑️ 스틸컷 삭제 완료 (파일 저장 시 반영)');
+                const currentKey = projectSelect.value;
+                if (currentOpenedProjectKey === currentKey && openModalByKeyFn) {
+                    openModalByKeyFn(currentKey, false);
+                }
+            });
+        });
+    }
+
     function loadProjectIntoEditor(key) {
         const p = projectDataMap[key];
         if (!p) return;
@@ -720,6 +824,17 @@ function initLocalVisualEditor() {
         document.getElementById('ed-roles').value = p.roles || '';
         document.getElementById('ed-tools').value = p.tools || '';
         document.getElementById('ed-desc').value = p.desc || '';
+
+        // Thumbnail
+        const thumbPreview = document.getElementById('ed-thumb-preview');
+        const thumbUrl = document.getElementById('ed-thumb-url');
+        const thumbStatus = document.getElementById('ed-thumb-status');
+        if (thumbPreview) thumbPreview.src = p.img || '';
+        if (thumbUrl) thumbUrl.value = p.img || '';
+        if (thumbStatus) thumbStatus.textContent = '';
+
+        // Gallery
+        renderGalleryStills(p);
 
         const specs = p.specs || {};
         document.getElementById('ed-spec-target').value = specs.target || '';
@@ -740,6 +855,11 @@ function initLocalVisualEditor() {
         p.tools = document.getElementById('ed-tools').value.trim();
         p.desc = document.getElementById('ed-desc').value.trim();
 
+        const inputThumbUrl = document.getElementById('ed-thumb-url').value.trim();
+        if (inputThumbUrl) {
+            p.img = inputThumbUrl;
+        }
+
         if (!p.specs) p.specs = {};
         p.specs.target = document.getElementById('ed-spec-target').value.trim();
         p.specs.role = document.getElementById('ed-spec-role').value.trim();
@@ -747,6 +867,103 @@ function initLocalVisualEditor() {
         p.specs.tools = document.getElementById('ed-spec-tools').value.trim();
         p.specs.aiScope = document.getElementById('ed-spec-aiscope').value.trim();
         p.specs.result = document.getElementById('ed-spec-result').value.trim();
+    }
+
+    // Thumbnail upload & URL change listeners
+    const thumbFileInput = document.getElementById('ed-thumb-file-input');
+    const thumbStatus = document.getElementById('ed-thumb-status');
+    if (thumbFileInput) {
+        thumbFileInput.addEventListener('change', async (e) => {
+            const file = e.target.files && e.target.files[0];
+            if (!file) return;
+
+            const currentKey = projectSelect.value;
+            const p = projectDataMap[currentKey];
+            if (!p) return;
+
+            if (thumbStatus) thumbStatus.textContent = '업로드 중...';
+            try {
+                const uploadedUrl = await uploadSingleFile(file);
+                p.img = uploadedUrl;
+                const thumbPreview = document.getElementById('ed-thumb-preview');
+                const thumbUrl = document.getElementById('ed-thumb-url');
+                if (thumbPreview) thumbPreview.src = uploadedUrl;
+                if (thumbUrl) thumbUrl.value = uploadedUrl;
+                if (thumbStatus) thumbStatus.textContent = '✅ 완료';
+
+                if (currentOpenedProjectKey === currentKey && modalImg) {
+                    modalImg.src = uploadedUrl;
+                    modalImg.style.display = '';
+                }
+
+                const editorialEl = document.querySelector(`.editorial-item[data-project="${currentKey}"]`);
+                if (editorialEl) {
+                    editorialEl.setAttribute('data-preview', uploadedUrl);
+                }
+
+                showToast(`✅ 대표 썸네일 변경 완료: ${file.name}`);
+            } catch (err) {
+                if (thumbStatus) thumbStatus.textContent = '❌ 실패';
+                alert('이미지 업로드 실패: ' + err.message);
+            } finally {
+                thumbFileInput.value = '';
+            }
+        });
+    }
+
+    const thumbUrlInput = document.getElementById('ed-thumb-url');
+    if (thumbUrlInput) {
+        thumbUrlInput.addEventListener('change', (e) => {
+            const val = e.target.value.trim();
+            const currentKey = projectSelect.value;
+            const p = projectDataMap[currentKey];
+            if (p && val) {
+                p.img = val;
+                const thumbPreview = document.getElementById('ed-thumb-preview');
+                if (thumbPreview) thumbPreview.src = val;
+                if (currentOpenedProjectKey === currentKey && modalImg) {
+                    modalImg.src = val;
+                }
+                const editorialEl = document.querySelector(`.editorial-item[data-project="${currentKey}"]`);
+                if (editorialEl) {
+                    editorialEl.setAttribute('data-preview', val);
+                }
+            }
+        });
+    }
+
+    // Gallery upload listener
+    const galleryFileInput = document.getElementById('ed-gallery-file-input');
+    if (galleryFileInput) {
+        galleryFileInput.addEventListener('change', async (e) => {
+            const files = Array.from(e.target.files || []);
+            if (files.length === 0) return;
+
+            const currentKey = projectSelect.value;
+            const p = projectDataMap[currentKey];
+            if (!p) return;
+            if (!Array.isArray(p.gallery)) p.gallery = [];
+
+            showToast(`⏳ ${files.length}개 파일 업로드 중...`);
+
+            try {
+                for (const file of files) {
+                    const uploadedUrl = await uploadSingleFile(file);
+                    p.gallery.push(uploadedUrl);
+                }
+                renderGalleryStills(p);
+
+                if (currentOpenedProjectKey === currentKey && openModalByKeyFn) {
+                    openModalByKeyFn(currentKey, false);
+                }
+
+                showToast(`✅ 스틸컷 ${files.length}개 추가 완료!`);
+            } catch (err) {
+                alert('스틸컷 업로드 실패: ' + err.message);
+            } finally {
+                galleryFileInput.value = '';
+            }
+        });
     }
 
     projectSelect.addEventListener('change', () => {
@@ -788,6 +1005,13 @@ function initLocalVisualEditor() {
             const data = await res.json();
             if (data.success) {
                 showToast('✅ 로컬 파일 (projects.json)에 저장 완료!');
+                const p = projectDataMap[k];
+                const itemEl = document.querySelector(`.editorial-item[data-project="${k}"]`);
+                if (itemEl && p) {
+                    const titleEl = itemEl.querySelector('.item-title');
+                    if (titleEl && p.title) titleEl.textContent = p.title;
+                    if (p.img) itemEl.setAttribute('data-preview', p.img);
+                }
                 if (openModalByKeyFn && currentOpenedProjectKey === k) {
                     openModalByKeyFn(k, false);
                 }
