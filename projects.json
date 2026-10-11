@@ -26,7 +26,8 @@
       "role": "1인 총괄 100% (콘티 기획, 2D UI 일러스트 디자인, 모션 인터랙션 제작, 컴포지팅)",
       "process": "공간 선택 ➔ 에디터 편집 ➔ 통계 대시보드의 3단계 여정 도출 ➔ 단계별 UI 인터랙션을 2D 모션으로 시각화",
       "tools": "After Effects, Illustrator",
-      "result": "구 ELYPECS.com 공식 메인 랜딩페이지 상단 기능 소개 영상으로 라이브 적용, 서비스 기능 이해도 대폭 개선"
+      "result": "구 ELYPECS.com 공식 메인 랜딩페이지 상단 기능 소개 영상으로 라이브 적용, 서비스 기능 이해도 대폭 개선",
+      "aiScope": ""
     }
   },
   "elypecs-bs": {
@@ -45,17 +46,20 @@
     ],
     "desc": "엘리펙스 비즈니스센터(Brand Space) 브랜드 스페이스 진입을 위한 인트로 2D 모션그래픽 영상입니다. 직관적이고 세련된 타이포그래피와 공간 브랜딩 그래픽 트랜지션을 통해 비즈니스센터의 전문성과 미래지향적 가치를 효과적으로 전달하도록 기획·제작하였습니다.",
     "gallery": [
-      "/projects/elypecs_bs_thumb_end.png",
       "/projects/elypecs_bs_intro1.png",
       "/projects/elypecs_bs_intro2.png",
-      "/projects/elypecs_bs_intro3.png"
+      "/projects/elypecs_bs_intro3.png",
+      "/projects/elypecs_landing_ep2_1791747438504.png",
+      "/projects/elypecs_landing_ep3_1791747438563.png",
+      "/projects/elypecs_landing_main_1791747438583.png"
     ],
     "specs": {
       "target": "기업 고객(B2B) 대상, 가상 브랜드 스페이스 '비즈니스센터' 진입 시 전문성과 신뢰도를 전달하는 브랜드 인트로",
-      "role": "1인 총괄 100% (콘티 기획, 2D 그래픽 디자인, 모션그래픽, 컬러 그레이딩)",
-      "process": "기업 브랜드 아이덴티티 분석 ➔ 모던한 타이포그래피 애니메이션 설계 ➔ 공간 진입감을 높이는 그래픽 트랜지션 연출",
-      "tools": "After Effects, Illustrator, Premiere Pro",
-      "result": "엘리펙스 비즈니스센터 공식 진입 인트로 영상으로 적용, 브랜드 인지도 및 사용자 진입 몰입도 향상"
+      "role": "콘티 기획, 2D 그래픽 디자인, 모션그래픽",
+      "process": "",
+      "tools": "Unreal Engine, After Effects, Illustrator, Premiere Pro",
+      "result": "엘리펙스 비즈니스센터 공식 진입 인트로 영상으로 적용, 브랜드 인지도 및 사용자 진입 몰입도 향상",
+      "aiScope": ""
     }
   },
   "clock": {
@@ -75,9 +79,9 @@
     ],
     "desc": "정밀한 시계 톱니바퀴 메커니즘과 정교한 기계적 연동 모션을 3D 렌더링으로 연출한 정밀 모션 스터디 작품입니다.",
     "gallery": [
-      "/projects/clock_thumb1.jpg",
       "/projects/clock_thumb2.png",
-      "/projects/clock_thumb3.png"
+      "/projects/clock_thumb3.png",
+      "/projects/clock_main_1791747372302.png"
     ],
     "specs": {
       "target": "3D 모션그래픽스 커뮤니티 및 숏폼 시청자 대상, 정밀 기계 메커니즘의 기구학적 아름다움을 보여주는 기술 스터디",
@@ -105,17 +109,20 @@
     ],
     "desc": "국립생태원 멸종위기종을 주제로 한 AI 기반 아나몰픽 미디어아트 프로젝트입니다.",
     "gallery": [
-      "/projects/endangered_thumb1.png",
-      "/projects/endangered_thumb2.png",
-      "/projects/endangered_thumb3.png"
+      "/projects/Still_01_1791747640349.png",
+      "/projects/Still_02_1791747640536.png",
+      "/projects/Still_03_1791747640737.png",
+      "/projects/Still_04_1791747640880.png",
+      "/projects/Still_05_1791747641050.png",
+      "/projects/Still_07_1791747641183.png"
     ],
     "specs": {
       "target": "국립생태원 방문객 대상, 멸종위기종 보호 메시지를 전달하는 3D 입체 착시 아나몰픽 미디어아트",
-      "role": "1인 총괄 100% (기획, 제작)",
+      "role": "영상 기획, 제작",
       "process": "관람객 시야각(FOV) 착시 궤적 계산 ➔ 동물 선정 및 이미지 제작 ➔ Ai 비디오 생성 ➔ AE 후반 합성",
       "tools": "Blender, After Effects, Photoshop, Runway, Veo",
-      "aiScope": "동물의 사실적 털 질감 생성 및 비디오 업스케일링. 3D 카메라 가이드를 결합해 AI 특유의 형태 왜곡 방지",
-      "result": "국립생태원 미디어 전광판 공식 송출 완수, 3D+AI 하이브리드 공정으로 기존 3D 단독 대비 제작 리드타임 45% 단축"
+      "aiScope": "사실적인 멸종위기종 동물 데이터 학습 및 이미지&비디오생성. 비디오 업스케일링. 3D 카메라 가이드를 결합해 AI 특유의 형태 왜곡 방지",
+      "result": "국립생태원 미디어 전광판 공식 송출 완수, 3D+AI 하이브리드 공정으로 기존 3D 단독 대비 제작 리드타임 단축"
     }
   },
   "mediacalendar": {
@@ -137,7 +144,7 @@
     "gallery": [
       "/projects/mediacalendar_autumn_bloom.gif",
       "/projects/mediacalendar_reel_1.png",
-      "/projects/mediacalendar_reel_2.png"
+      "/projects/_____1_1791747727035.png"
     ],
     "specs": {
       "target": "도심 보행자 및 옥외 전광판 시청자 대상, 계절별 테마를 담은 구독형 옥외 미디어아트 콘텐츠",
