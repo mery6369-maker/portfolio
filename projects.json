@@ -275,7 +275,8 @@
       "role": "기획, 3D 모션, 컴포지팅",
       "process": "상권별 유동인구 시청 특성 분석 ➔ 전광판 곡률/앵글 실측 ➔ UE5 3D 입체 카메라 애니메이션 ➔ 합성 피니싱",
       "tools": "Unreal Engine 5, Blender, After Effects",
-      "result": "강남역 G-Vision, 역삼 역삼빌딩, 홍대 토니모리 전광판 3개소 동시 송출, 보행자 시선 집중 및 바이럴 유도"
+      "result": "",
+      "aiScope": ""
     }
   },
   "raemian": {
