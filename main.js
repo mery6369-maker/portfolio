@@ -303,16 +303,28 @@ function initPortfolioTabsAndModal() {
             modalLinksWrapper.innerHTML = '';
         }
 
+        const modalCategory = document.getElementById('modal-category');
+        if (modalCategory) modalCategory.textContent = data.category || 'PROJECT ARCHIVE';
         if (modalTitle) modalTitle.textContent = data.title;
         if (modalClient) modalClient.textContent = `Client: ${data.client}`;
         if (modalYear) modalYear.textContent = `Year: ${data.year}`;
-        if (modalRoles) modalRoles.textContent = `Roles: ${data.roles || '-'}`;
-        if (modalTools) modalTools.textContent = `Tools: ${data.tools || '-'}`;
-        if (modalDesc) modalDesc.textContent = data.desc;
+
+        const hasSpecs = Boolean(data.specs && Object.keys(data.specs).some(k => data.specs[k] && typeof data.specs[k] === 'string' && data.specs[k].trim() !== ''));
+
+        if (modalDesc) {
+            if (hasSpecs) {
+                modalDesc.classList.add('hidden');
+            } else if (data.desc) {
+                modalDesc.textContent = data.desc;
+                modalDesc.classList.remove('hidden');
+            } else {
+                modalDesc.classList.add('hidden');
+            }
+        }
 
         if (modalSpecsGrid && modalSpecsWrapper) {
             modalSpecsGrid.innerHTML = '';
-            if (data.specs) {
+            if (hasSpecs) {
                 modalSpecsWrapper.classList.remove('is-hidden');
                 const specConfig = [
                     { key: 'target', icon: '🎯', label: '목적 & 타깃' },
@@ -327,13 +339,13 @@ function initPortfolioTabsAndModal() {
                     const val = data.specs[cfg.key];
                     if (val && typeof val === 'string' && val.trim() !== '') {
                         const card = document.createElement('div');
-                        card.className = 'bg-surface-1 border border-hairline rounded-lg p-3 space-y-1 hover:border-white/30 transition-colors';
+                        card.className = 'bg-[#141414] border border-white/10 rounded-lg p-3.5 space-y-1.5 hover:border-white/30 transition-colors shadow-sm';
                         card.innerHTML = `
-                            <div class="flex items-center gap-1.5 font-mono text-[11px] font-bold text-white">
+                            <div class="flex items-center gap-2 font-mono text-[11px] font-bold text-white tracking-wide">
                                 <span class="text-xs">${cfg.icon}</span>
                                 <span>${cfg.label}</span>
                             </div>
-                            <p class="text-xs text-ink-muted leading-relaxed font-light pl-4">${val}</p>
+                            <p class="text-xs text-neutral-300 leading-relaxed font-normal pl-5 break-keep">${val}</p>
                         `;
                         modalSpecsGrid.appendChild(card);
                     }
