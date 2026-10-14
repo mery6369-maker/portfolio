@@ -403,33 +403,31 @@
     }
   },
   "trygalaxy": {
-    "title": "SAMSUNG TRY GALAXY 온라인 방탈출 [비스포크 XR]",
-    "client": "Samsung / Olim Planet",
+    "title": "TRY GALAXY 온라인 방탈출",
+    "client": "Samsung",
     "year": "2025.04",
-    "category": "Interactive XR / Commercial Video",
+    "category": "2D & 3D Motion / Interactive Video",
     "roles": "영상 기획, 2D·3D 모션 그래픽, 가변형 영상 제작 (기여도 100% - 영상 파트)",
     "tools": "After Effects, Blender, Photoshop, Illustrator, Premiere Pro",
     "img": "/projects/trygalaxy_main.png",
-    "videoSrc": "/projects/trygalaxy_preview.mp4",
     "youtubeLinks": [
       {
-        "label": "▶ Watch Full Showcase / Video",
-        "url": "https://chayein-portfolio.vercel.app/#project/trygalaxy"
+        "label": "▶ Watch YouTube Shorts",
+        "url": "https://youtube.com/shorts/B_nOv9ZCFHA"
       }
     ],
-    "desc": "삼성전자 Try Galaxy 캠페인의 일환으로 제작된 'AI와 함께하는 온라인 방탈출 게임 체험 (비스포크 XR)' 프로젝트입니다. 웹 기반 인터랙티브 방탈출 게임 중 플레이어가 단서를 획득하고 스토리 사건을 추적하는 핵심 2D/3D 영상 구간 전체를 기획 및 구현하였습니다. 특히 다양한 모바일 기기별 가변 해상도(Aspect Ratio) 환경에서도 UI 요소와 시각 정보가 잘리지 않고 온전한 몰입감을 유지할 수 있도록 '1:1 정방형(Square)' 영상 파이프라인을 설계·제작하여 성공적으로 적용했습니다.",
+    "desc": "삼성전자 Try Galaxy 캠페인의 일환으로 제작된 온라인 방탈출 게임 체험 프로젝트입니다. 웹 기반 인터랙티브 방탈출 게임 중 플레이어가 단서를 획득하고 사건을 추적하는 핵심 2D/3D 영상 구간 전체를 기획 및 구현하였습니다. 특히 다양한 모바일 기기별 가변 해상도(Aspect Ratio) 환경에서도 UI 요소와 단서 정보가 잘리지 않고 온전한 몰입감을 유지할 수 있도록 '1:1 정방형(Square)' 영상 파이프라인을 설계·제작하여 성공적으로 적용했습니다.",
     "gallery": [
       "/projects/trygalaxy_main.png",
-      "/projects/trygalaxy_thumb1.png",
-      "/projects/trygalaxy_thumb2.png",
-      "/projects/trygalaxy_ai_sample.png"
+      "/projects/trygalaxy_move.png",
+      "/projects/trygalaxy_ending.png"
     ],
     "specs": {
-      "target": "온라인 방탈출 게임 참여자 및 삼성 갤럭시 잠재 고객 대상, 미스터리 스토리라인과 AI 기능 체험을 결합한 인터랙티브 영상 연출",
+      "target": "온라인 방탈출 게임 참여자 및 삼성 갤럭시 잠재 고객 대상, 미스터리 단서와 사건 전개를 시각화한 인터랙티브 영상 연출",
       "role": "방탈출 인터랙티브 영상 기획 및 2D·3D 구현, 모바일 가변형 대응 1:1 정방형 영상 파이프라인 설계 (영상 부문 1인 전담 100%)",
       "process": "스토리 단서 및 사건 전개 콘티 기획 ➔ 3D 오브제/공간 및 2D 그래픽 에셋 구축 ➔ 모바일 가변비 대응 1:1 정방형 모션 제작 ➔ 웹 인터랙션 연계 비디오 피니싱",
       "tools": "After Effects, Blender, Photoshop, Illustrator, Premiere Pro",
-      "aiScope": "방탈출 미스터리 단서 그래픽 및 분위기 연출용 AI 비주얼 에셋 생성 활용",
+      "aiScope": "",
       "result": "삼성 Try Galaxy 온라인 방탈출 캠페인 정식 온에어, 모바일 화면비 왜곡 없는 최적화 렌더링으로 인터랙티브 플레이 체류시간 및 몰입도 극대화"
     }
   }
