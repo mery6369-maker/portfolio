@@ -1,3 +1,4 @@
+import { injectSpeedInsights } from '@vercel/speed-insights';
 import initialProjectDataMap from './projects.json';
 
 let projectDataMap = initialProjectDataMap;
@@ -18,6 +19,9 @@ function showToast(msg) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Vercel Speed Insights
+    injectSpeedInsights();
+    
     initCustomCursor();
     initSlideDotsTracker();
     initPortfolioTabsAndModal();
@@ -1090,7 +1094,7 @@ function initCopyEmail() {
     emailBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            showToast('채용 전형 중 문의는 담당 컨설턴트를 통해 진행됩니다.');
+            showToast('���용 전형 중 문의는 담당 컨설턴트를 통해 진행됩니다.');
         });
     });
 }
