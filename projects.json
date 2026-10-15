@@ -95,10 +95,10 @@
   "endangered": {
     "title": "국립생태원 멸종위기종 Ai 아나몰픽",
     "client": "국립생태원",
-    "year": "2026",
+    "year": "2026.01",
     "category": "AI Anamorphic / 3D Art",
-    "roles": "1인 총괄 100% (기획, 제작)",
-    "tools": "Blender, After Effects, Photoshop, Runway, Veo",
+    "roles": "1인 총괄 100% (시야각 왜곡 계산, AI 비디오 생성, 후반 합성)",
+    "tools": "Blender 3D, Runway Gen-3, Google Veo, After Effects, Photoshop, Topaz Video AI",
     "img": "/projects/endangered_still_main.png",
     "portfolioUrl": "https://chayein.myportfolio.com/endangered-species",
     "youtubeLinks": [
@@ -107,7 +107,7 @@
         "url": "https://youtu.be/luq9wjWr4YA"
       }
     ],
-    "desc": "국립생태원 멸종위기종을 주제로 한 AI 기반 아나몰픽 미디어아트 프로젝트입니다.",
+    "desc": "국립생태원 옥외 전광판을 위해 제작된 평면형 아나몰픽 미디어아트입니다. Blender로 관람객 시야각 착시 왜곡을 정밀 역계산하고, Runway Gen-3 및 Veo를 연동하여 멸종위기 야생생물의 생동감 넘치는 입체 모션을 실사급으로 구현하였습니다. 실사로 담기 어려운 멸종위기종 생물을 AI로 담아내어 실사의 한계를 극복하였습니다.",
     "gallery": [
       "/projects/Still_01_1791747640349.png",
       "/projects/Still_02_1791747640536.png",
@@ -118,20 +118,20 @@
     ],
     "specs": {
       "target": "국립생태원 방문객 대상, 멸종위기종 보호 메시지를 전달하는 3D 입체 착시 아나몰픽 미디어아트",
-      "role": "영상 기획, 제작",
-      "process": "관람객 시야각(FOV) 착시 궤적 계산 ➔ 동물 선정 및 이미지 제작 ➔ Ai 비디오 생성 ➔ AE 후반 합성",
-      "tools": "Blender, After Effects, Photoshop, Runway, Veo",
+      "role": "1인 총괄 100% (시야각 왜곡 계산, AI 비디오 생성, 후반 합성)",
+      "process": "Blender 3D 카메라 가이드 제작 ➔ 멸종위기종 생물 특성 및 서식지 정보 학습 ➔ 학습 데이터 기반 이미지 생성 및 리터칭 ➔ I2V 영상 생성 ➔ 최종 2D 디자인 추가 및 컴포지팅",
+      "tools": "Blender 3D, Runway Gen-3, Google Veo, After Effects, Photoshop, Topaz Video AI",
       "aiScope": "사실적인 멸종위기종 동물 데이터 학습 및 이미지&비디오생성. 비디오 업스케일링. 3D 카메라 가이드를 결합해 AI 특유의 형태 왜곡 방지",
-      "result": "국립생태원 미디어 전광판 공식 송출 완수, 3D+AI 하이브리드 공정으로 기존 3D 단독 대비 제작 리드타임 단축"
+      "result": "대형 옥외 LED 전광판 아나몰픽 미디어아트 영상 (지정 시야각 무왜곡 송출)"
     }
   },
   "mediacalendar": {
     "title": "Ai MEDIA ART [ MEDIA CALENDAR ]",
-    "client": "Personal / Media Art",
-    "year": "2023",
+    "client": "Olim Planet (인하우스)",
+    "year": "2025.06",
     "category": "AI Media Art / Motion",
-    "roles": "AI Art Direction, Motion Design & Editing",
-    "tools": "Midjourney, Runway, Adobe After Effects, Photoshop",
+    "roles": "AI 아트 디렉팅, 모션 디자인 & 편집 (13종 전담 100%)",
+    "tools": "Midjourney v6, Runway Gen-2, Suno AI, After Effects, Photoshop",
     "img": "/projects/mediacalendar_autumn_bloom.gif",
     "portfolioUrl": "https://chayein.myportfolio.com/mediacalendar",
     "youtubeLinks": [
@@ -140,7 +140,7 @@
         "url": "https://youtu.be/VhjY9sgRTH8"
       }
     ],
-    "desc": "구독형 미디어아트 상품 Media Calendar 제작에 참여하였습니다. 57종의 테마 콘텐츠 중 13종의 콘텐츠를 제작하였으며 MidJourney, Runway, Suno, Adobe After Effects를 활용하였습니다.",
+    "desc": "계절별 테마를 주제로 한 AI Media Calendar 서비스를 런칭하기 위한 시리즈입니다. 전체 57종 테마 중 13종을 전담하여 Midjourney 비주얼 룩 개발부터 Runway 비디오 모션 생성, Suno 사운드 합성까지 1인 AI 풀파이프라인으로 제작했습니다.",
     "gallery": [
       "/projects/mediacalendar_autumn_bloom.gif",
       "/projects/mediacalendar_reel_1.png",
@@ -148,21 +148,21 @@
     ],
     "specs": {
       "target": "도심 보행자 및 옥외 전광판 시청자 대상, 계절별 테마를 담은 구독형 옥외 미디어아트 콘텐츠",
-      "role": "미디어 디렉팅 및 영상 제작 (전체 57종 테마 중 핵심 13종 콘텐츠 전담 제작 100%)",
-      "process": "계절별 감성 키워드 도출 ➔ Midjourney 비주얼 프롬프팅 ➔ Runway 모션 비디오 생성 ➔ AE 타이포그래피 합성",
-      "tools": "Adobe After Effects, Photoshop | Midjourney, Runway",
+      "role": "AI 아트 디렉팅, 모션 디자인 & 편집 (13종 전담 100%)",
+      "process": "월별 이벤트를 통해 컨셉 및 키비주얼 도출 ➔ I2V 영상 생성 ➔ Suno 음원 생성 ➔ 최종 편집(Loop)",
+      "tools": "Midjourney v6, Runway Gen-2, Suno AI, After Effects, Photoshop",
       "aiScope": "초기 비주얼 룩 개발(Midjourney), 생성형 비디오 모션(Runway) 전방위 파이프라인 적용",
-      "result": "서울 시내 대형 옥외 전광판 네트워크(MOU) 대규모 도심 송출 성공, 단독 13종 콘텐츠 상용 납기 완수"
+      "result": "도심 옥외 대형 미디어아트 13편 시리즈 공식 온에어"
     }
   },
   "mbc": {
     "title": "MBC 'PD가 사라졌다' OUTRO",
-    "client": "MBC",
+    "client": "MBC 예능본부",
     "year": "2024.02",
     "category": "3D Motion / CRT Effects",
-    "roles": "Conti(기획), 3D Design, 2D Design, VFX, Edit / Compositing / Color Grading",
-    "tools": "After Effects, Illustrator, Unreal Engine, Blender",
-    "img": "/project_mbc.png",
+    "roles": "콘티 기획, 3D 모델링, 2D 디자인, VFX 합성, 컬러 그레이딩 (1인 총괄 100%)",
+    "tools": "Unreal Engine 5, Blender, After Effects, Premiere Pro",
+    "img": "/projects/MBC-PD가사라졌다-02.png",
     "portfolioUrl": "https://chayein.myportfolio.com/mbc-pdsgone",
     "youtubeLinks": [
       {
@@ -170,28 +170,28 @@
         "url": "https://youtu.be/wKvWNysGSEA"
       }
     ],
-    "desc": "MBC의 AI PD 엠파고가 연출하는 예능 프로그램 'PD가 사라졌다'의 방송 아웃트로를 제작하였습니다. 기술과 디스토피아적 분위기를 강조하기 위해 2D&3D 모션 위에 CRT 기법을 활용하여 연출하였습니다.",
+    "desc": "MBC 최초 AI PD 예능 프로그램의 본방송 최종회의 엔딩 아웃트로 영상입니다. 디스토피아적 사이버네틱 세계관을 표현하기 위해 UE5와 Blender로 3D 공간을 구축하고, 아날로그 CRT 디스플레이 글리치 VFX를 합성하여 지상파 방송 규격으로 납품 온에어했습니다.",
     "gallery": [
-      "/project_mbc.png",
+      "/projects/MBC-PD가사라졌다-02.png",
       "/mbc_2.png",
       "/mbc_3.png"
     ],
     "specs": {
       "target": "지상파 방송 시청자 대상, 국내 최초 AI PD 예능 프로그램의 디스토피아적 세계관을 각인시키는 방송 아웃트로",
-      "role": "1인 총괄 100% (콘티 기획, 3D 디자인, 2D 디자인, VFX, 편집/컴포지팅, 컬러 그레이딩)",
+      "role": "콘티 기획, 3D 모델링, 2D 디자인, VFX 합성, 컬러 그레이딩 (1인 총괄 100%)",
       "process": "AI 알고리즘과 레트로 방송 감성의 충돌 기획 ➔ UE5/Blender 3D 에셋 모델링 ➔ 아날로그 CRT 디스플레이 질감 VFX 합성",
-      "tools": "After Effects, Illustrator, Unreal Engine, Blender",
-      "result": "MBC 지상파 방송 본편 엔딩 아웃트로로 정규 온에어 송출, 프로그램의 독창적 아이덴티티 구축 기여"
+      "tools": "Unreal Engine 5, Blender, After Effects, Premiere Pro",
+      "result": "MBC 본방송 최종화 정규 엔딩 아웃트로 지상파 송출 완료"
     }
   },
   "pepsi": {
     "title": "Pepsi Online Pop-up",
-    "client": "LOTTE chilsung",
-    "year": "2024.07",
+    "client": "롯데칠성음료 (LOTTE Chilsung)",
+    "year": "2024.08",
     "category": "3D VFX / Commercial Intro",
-    "roles": "Conti(기획), 3D Design, 2D Design, Motion, Edit / Compositing / Color Grading",
-    "tools": "After Effects, Illustrator, Photoshop, Unreal Engine, Blender",
-    "img": "/projects/pepsi_custom_1.gif",
+    "roles": "콘티 기획, 3D·2D 디자인, 모션그래픽",
+    "tools": "Unreal Engine 5, After Effects, Illustrator, Photoshop",
+    "img": "/projects/Cam-Wall00_0189.png",
     "portfolioUrl": "https://chayein.myportfolio.com/pepsionline",
     "youtubeLinks": [
       {
@@ -199,7 +199,7 @@
         "url": "https://youtu.be/3RJKS44KnhI"
       }
     ],
-    "desc": "펩시의 신제품을 알리기 위해 기획된 온라인 팝업스토어 인트로 영상 제작. 신제품 3종의 매력을 담아내고 펩시 특유의 청량한 브랜드 이미지를 구현했습니다.",
+    "desc": "롯데칠성음료의 펩시 가상 팝업스토어 진입 메인 인트로 영상입니다. 역동적인 카메라 워크와 스피디한 컷 편집으로 브랜드의 짜릿한 청량감을 극대화했습니다.",
     "gallery": [
       "/projects/pepsi_custom_1.gif",
       "/projects/pepsi_custom_2.png",
@@ -207,10 +207,10 @@
     ],
     "specs": {
       "target": "MZ세대 펩시 소비자 대상, 펩시 신제품 3종의 청량감과 브랜드 이미지를 극대화하는 가상 팝업 인트로",
-      "role": "기획 및 영상 총괄 100% (콘티 기획, 3D 디자인, 2D 키비주얼, 모션그래픽, 사운드 싱크)",
-      "process": "펩시 탄산의 폭발적 에너지 연출 ➔ 제품 3D 캔 모델링 및 유체 이펙트 ➔ 다이내믹 카메라 워크 및 모션 템포 조율",
-      "tools": "Unreal Engine, Blender, After Effects, Photoshop",
-      "result": "롯데칠성 펩시 온라인 팝업스토어 메인 공식 인트로로 정식 릴리즈, 방문자 체류시간 증대 및 브랜드 호감도 향상"
+      "role": "콘티 기획, 3D·2D 디자인, 모션그래픽",
+      "process": "브랜드 핵심 아이덴티티 분석 ➔ 다이내믹 카메라 워크 및 모션그래픽 텐션 연출 ➔ 정교한 컷 편집 및 사운드 싱크",
+      "tools": "Unreal Engine 5, After Effects, Illustrator, Photoshop",
+      "result": "펩시 가상 팝업스토어 메인 공식 인트로 영상 라이브 탑재"
     }
   },
   "scube": {
@@ -315,11 +315,11 @@
   },
   "sh": {
     "title": "SH형 미래주거모델 특화영상",
-    "client": "서울주택도시개발공사",
-    "year": "2026",
+    "client": "SH 서울주택도시공사",
+    "year": "2026.08",
     "category": "AI Video / Motion Graphics",
-    "roles": "스토리보드 기획, AI 비디오 파이프라인 구축, 이미지 및 영상 제작, 인포그래픽 모션 편집",
-    "tools": "After Effects, Premiere Pro, Unreal Engine 5 | Magnific, Manus, Gemini",
+    "roles": "스토리보드 기획, AI 파이프라인 구축, 이미지·영상 제작, 인포그래픽 모션 편집",
+    "tools": "Gemini 2.0, Magnific AI, Unreal Engine 5, After Effects, Topaz",
     "img": "/projects/sh_senior_1.png",
     "videoSrc": "",
     "youtubeLinks": [
@@ -328,7 +328,7 @@
         "url": "https://youtu.be/skt9Fazz45Y"
       }
     ],
-    "desc": "고령가구 및 양육가구 미래주거 스마트단지 홍보 특화영상 기획 및 구축. AI 에이전트 협업 콘티 추출과 생성 AI 연계 파이프라인으로 미래 주거 공간의 특화 기능을 연출하였습니다.",
+    "desc": "서울주택도시공사의 고령가구·양육가구 특화 스마트 주거 비전을 영상화한 프로젝트입니다. 건축 공간 모델링 데이터를 기반으로 AI를 결합하여, 3D 구현 시 제작 비용이 큰 캐릭터 애니메이션과 외부 전경, 다양한 커뮤니티 시설을 효율적으로 시각화하고 제작비를 대폭 절감했습니다.",
     "gallery": [
       "/projects/sh_senior_1.png",
       "/projects/sh_senior_2.png",
@@ -339,20 +339,20 @@
     ],
     "specs": {
       "target": "SH공공주택 입주 예정자(고령·양육가구) 대상, 미래 스마트단지 주거 솔루션 직관적 홍보",
-      "role": "스토리보드 기획, AI 비디오 파이프라인 구축, 이미지 및 영상 제작, 인포그래픽 모션 편집",
-      "process": "세대별 페르소나 분석 ➔ 콘티 도출 ➔ UE5 아파트 내부 구현 ➔ Ai 이미지/영상 생성 ➔ 인포그래픽 2D 모션 결합",
-      "tools": "After Effects, Premiere Pro, Unreal Engine 5 | Magnific, Manus, Gemini",
+      "role": "스토리보드 기획, AI 파이프라인 구축, 이미지·영상 제작, 인포그래픽 모션 편집",
+      "process": "SH도시공사의 방대한 미래 계획 파일 학습(AI) ➔ 중요도에 따라 2가지 영상 콘티 제작(고령/양육) ➔ TTS 보이스 내레이션 생성 ➔ UE5 공간 이미지 촬영 및 Inpaint로 각 씬별 이미지 생성 ➔ I2V 비디오 생성 ➔ 영상 업스케일 ➔ 최종 편집",
+      "tools": "Gemini 2.0, Magnific AI, Unreal Engine 5, After Effects, Topaz",
       "aiScope": "Gemini/Manus를 활용한 씬 콘티 시나리오 추출, Magnific 고해상도 이미지 및 비디오 생성, TTS 생성",
-      "result": "실사 세트 촬영 대비 제작 예산 약 80% 절감, 복잡한 스마트 주거 기술을 감성적이고 직관적인 비주얼로 시각화"
+      "result": "SH공사 공식 미래주거 솔루션 메타버스관 및 정책 홍보 영상"
     }
   },
   "ktg": {
     "title": "KT&G 릴 미니멀리움 마곡 미디어아트",
-    "client": "KT&G / Olim Planet",
-    "year": "2026.01",
+    "client": "KT&G",
+    "year": "2026.07",
     "category": "Media Art / 3D Motion",
-    "roles": "아트 디렉팅, Ai 생성 및 컴포지팅 (기여도 100%)",
-    "tools": "Magnific, After Effects",
+    "roles": "아트 디렉팅, AI 생성 및 모션 컴포지팅",
+    "tools": "Magnific AI, After Effects",
     "img": "/projects/ktg_custom_1.png",
     "youtubeLinks": [
       {
@@ -360,7 +360,7 @@
         "url": "https://youtu.be/8ooxjeFhQjM"
       }
     ],
-    "desc": "Waves of Purification : 유동적인 유리의 곡선을 배경으로, 정제된 미니멀리즘과 부드러운 빛의 산란이 결합된 미디어 아트입니다. 연기처럼 물결치는 곡선형 유리 너머로 유려하게 흐르고 굴절되는 싱그러운 초록의 실루엣을 통해 감각적이고 현대적인 시각적 안식처를 제안합니다.",
+    "desc": "KT&G 마곡 플래그십스토어 메인 스크린에 상설 상영되는 공간 브랜딩 미디어아트입니다. 'Waves of Purification' 테마로 유체인 연기의 파동을 형상화한 유리 오브제와 공간 분위기에 맞는 식재를 활용해 미디어아트를 제작했습니다. AI 비디오와 2D VFX 스킬을 결합하여 브랜드의 정제된 미니멀리즘을 표현했습니다.",
     "gallery": [
       "/projects/ktg_custom_1.png",
       "/projects/ktg_custom_2.png",
@@ -368,11 +368,11 @@
     ],
     "specs": {
       "target": "스토어 방문객 대상, 정제된 미니멀리즘과 휴식을 전달하는 공간 몰입형 미디어아트 연출",
-      "role": "아트 디렉팅, Ai 생성 및 컴포지팅 (기여도 100%)",
-      "process": "'Waves of Purification' 콘셉트 ➔ 물결치는 유리의 곡선과 빛의 굴절 물리 시뮬레이션 ➔ 싱그러운 녹음의 실루엣 연출",
-      "tools": "Magnific, After Effects",
+      "role": "아트 디렉팅, AI 생성 및 모션 컴포지팅",
+      "process": "인테리어 기획안 확인 ➔ 컨셉 도출 ➔ AI 시안 이미지 제작 ➔ 식재 AI 영상 생성 ➔ 유리 AI 이미지 생성 ➔ 굴절을 강조하여 깊이감을 부여한 최종 컴포지팅",
+      "tools": "Magnific AI, After Effects",
       "aiScope": "글래스 굴절 너머의 싱그러운 녹음 이미지 및 영상 제작",
-      "result": "KT&G 릴 미니멀리움 마곡 플래그십 스토어 대형 디스플레이에 공식 상설 미디어아트로 상영"
+      "result": "KT&G 마곡 플래그십스토어 메인 대형 디스플레이 상설 상영"
     }
   },
   "summerroom": {
@@ -404,11 +404,11 @@
   },
   "trygalaxy": {
     "title": "TRY GALAXY 온라인 방탈출",
-    "client": "Samsung",
-    "year": "2025.04",
+    "client": "삼성전자 (Samsung)",
+    "year": "2025.07",
     "category": "2D & 3D Motion / Interactive Video",
-    "roles": "영상 기획, 2D·3D 모션 그래픽, 가변형 영상 제작 (기여도 100% - 영상 파트)",
-    "tools": "After Effects, Blender, Photoshop, Illustrator, Premiere Pro",
+    "roles": "영상 기획, 2D·3D 모션그래픽, 1:1 가변형 파이프라인 설계 (영상 1인 전담 100%)",
+    "tools": "Unreal Engine 5, After Effects, Blender 3D, Premiere Pro, Illustrator, Photoshop",
     "img": "/projects/trygalaxy_main.png",
     "youtubeLinks": [
       {
@@ -416,7 +416,7 @@
         "url": "https://youtube.com/shorts/B_nOv9ZCFHA"
       }
     ],
-    "desc": "삼성전자 Try Galaxy 캠페인의 일환으로 제작된 온라인 방탈출 게임 체험 프로젝트입니다. 웹 기반 인터랙티브 방탈출 게임 중 플레이어가 단서를 획득하고 사건을 추적하는 핵심 2D/3D 영상 구간 전체를 기획 및 구현하였습니다. 특히 다양한 모바일 기기별 가변 해상도(Aspect Ratio) 환경에서도 UI 요소와 단서 정보가 잘리지 않고 온전한 몰입감을 유지할 수 있도록 '1:1 정방형(Square)' 영상 파이프라인을 설계·제작하여 성공적으로 적용했습니다.",
+    "desc": "삼성전자의 글로벌 온라인 방탈출 캠페인에 탑재된 인터랙티브 스토리 영상입니다. 다양한 모바일 기기 화면 비율에 유연하게 대응할 수 있도록 1:1 정방형 가변 영상으로 제작되었으며, 인터랙션에 한계가 있는 웹 환경에서도 고품질 영상을 결합해 높은 몰입감을 완성했습니다.",
     "gallery": [
       "/projects/trygalaxy_main.png",
       "/projects/trygalaxy_move.png",
@@ -424,11 +424,11 @@
     ],
     "specs": {
       "target": "온라인 방탈출 게임 참여자 및 삼성 갤럭시 잠재 고객 대상, 미스터리 단서와 사건 전개를 시각화한 인터랙티브 영상 연출",
-      "role": "방탈출 인터랙티브 영상 기획 및 2D·3D 구현, 모바일 가변형 대응 1:1 정방형 영상 파이프라인 설계 (영상 부문 1인 전담 100%)",
+      "role": "영상 기획, 2D·3D 모션그래픽, 1:1 가변형 파이프라인 설계 (영상 1인 전담 100%)",
       "process": "스토리 단서 및 사건 전개 콘티 기획 ➔ 3D 오브제/공간 및 2D 그래픽 에셋 구축 ➔ 모바일 가변비 대응 1:1 정방형 모션 제작 ➔ 웹 인터랙션 연계 비디오 피니싱",
-      "tools": "After Effects, Blender, Photoshop, Illustrator, Premiere Pro",
+      "tools": "Unreal Engine 5, After Effects, Blender 3D, Premiere Pro, Illustrator, Photoshop",
       "aiScope": "",
-      "result": "삼성 Try Galaxy 온라인 방탈출 캠페인 정식 온에어, 모바일 화면비 왜곡 없는 최적화 렌더링으로 인터랙티브 플레이 체류시간 및 몰입도 극대화"
+      "result": "글로벌 모바일 웹 방탈출 게임 핵심 스토리 컷씬 정식 릴리즈"
     }
   }
 }

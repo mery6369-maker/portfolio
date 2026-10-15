@@ -106,8 +106,7 @@ function initSlideDotsTracker() {
         'section-01': 'main',
         'section-02': 'works',
         'section-03': 'expertise',
-        'section-04': 'contact'
-    };
+        };
 
     function scrollToSectionId(id, updateHash = true) {
         const targetEl = document.getElementById(id);
@@ -560,11 +559,12 @@ function initRoutingAndDeepLinks() {
 
         if (hash === '#contact') {
             if (closeModalFn) closeModalFn(false);
-            const sec = document.getElementById('section-04');
+            const sec = document.getElementById('section-01');
             if (sec) {
                 if (window._revealSection) window._revealSection(sec);
                 sec.scrollIntoView({ behavior: 'smooth' });
             }
+            history.replaceState(null, '', '#main');
             return;
         }
 
@@ -1090,16 +1090,7 @@ function initCopyEmail() {
     emailBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            const email = 'mery6369@gmail.com';
-            navigator.clipboard.writeText(email).then(() => {
-                const cardEmailText = document.getElementById('card-email-text');
-                if (cardEmailText) {
-                    const originalText = cardEmailText.textContent;
-                    cardEmailText.textContent = 'COPIED TO CLIPBOARD!';
-                    setTimeout(() => { cardEmailText.textContent = originalText; }, 2000);
-                }
-                showToast(`COPIED TO CLIPBOARD: ${email}`);
-            });
+            showToast('채용 전형 중 문의는 담당 컨설턴트를 통해 진행됩니다.');
         });
     });
 }
