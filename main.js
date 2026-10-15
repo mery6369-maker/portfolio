@@ -1,4 +1,8 @@
+import { inject } from '@vercel/analytics';
 import initialProjectDataMap from './projects.json';
+
+// Initialize Vercel Analytics
+inject();
 
 let projectDataMap = initialProjectDataMap;
 let currentOpenedProjectKey = null;
