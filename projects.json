@@ -436,7 +436,7 @@
     "client": "올림플래닛 / 서울시 스마트라이프위크 (코엑스)",
     "year": "2025.08 - 2025.10",
     "category": "Physical AI & VR Interaction / Spatial Simulation",
-    "roles": "피지컬 AI 로봇 애니메이션, 3D 리깅, HMD 시점 연동 비주얼 파이프라인, 인터랙션 연출",
+    "roles": "체험 시나리오 구성, 피지컬 AI 로봇 리깅 및 모션 애니메이션, 영상 제작",
     "tools": "Blender, Unreal Engine, HMD (VR), After Effects",
     "img": "/projects/slw_robot_main.png",
     "portfolioUrl": "https://www.kmjournal.net/news/articleView.html?idxno=3974",
@@ -451,7 +451,7 @@
     ],
     "specs": {
       "target": "2025 스마트라이프위크 참관객 대상, 2035년 미래 주거공간 속 피지컬 AI 로봇의 인터랙션을 HMD VR로 몰입감 있게 체험",
-      "role": "애니메이션 및 영상 제작 담당 (피지컬 AI 로봇 3D 리깅, 제스처·모션 애니메이션, HMD 시점 동기화 비주얼 연출)",
+      "role": "체험형 콘텐츠 시나리오 기획 참여 및 로봇 3D 리깅, 모션 애니메이션, HMD 연동 영상 제작 담당",
       "process": "가든/주거 로봇 컨셉 도출 ➔ Blender 3D 리깅 및 모션 시퀀싱 ➔ HMD 가상공간 상호작용 타이밍 동기화 ➔ 현장 시연 최적화",
       "tools": "Blender, Unreal Engine, HMD VR, After Effects",
       "result": "서울 코엑스 SLW 2025 현장 성황리 전시, 언론 보도(KMJ 등) 및 가상 주거 공간 속 로봇 인터랙션 검증 완수",
