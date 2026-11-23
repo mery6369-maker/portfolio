@@ -457,5 +457,63 @@
       "result": "서울 코엑스 SLW 2025 현장 성황리 전시, 언론 보도(KMJ 등) 및 가상 주거 공간 속 로봇 인터랙션 검증 완수",
       "aiScope": "피지컬 AI 로봇의 지능형 행동 패턴 시각화 및 공간 인터랙션 시뮬레이션 (※ 전시장 시연 보안 프로젝트로 영상 미게시, 기획/스틸 전시)"
     }
+  },
+  "shinhwa": {
+    "title": "신화갤러리 실감 미디어 박물관 AI 미디어아트 (오픈 예정)",
+    "client": "신화갤러리 (제주 · https://shinhwagallery.co.kr/home-2026)",
+    "year": "2026.07 (오픈 예정)",
+    "category": "AI Media Art / Museum Spatial Projection",
+    "roles": "전시 미디어아트 컨셉 기획, 생성형 AI 에셋 제작, 대형 멀티프로젝션 합성·루프 파이프라인 설계",
+    "tools": "Generative AI (Image/Video), After Effects, Photoshop, Multi-Projection Mapping",
+    "img": "/projects/shinhwa_main.jpg",
+    "portfolioUrl": "https://shinhwagallery.co.kr/home-2026",
+    "youtubeLinks": [],
+    "desc": "제주 신화갤러리(1F·B1) 소장 한·중 고미술 유물(도자기·고서·청동유물·달항아리 등)을 압도하지 않고 돋보이게 하는 절제된 전시 특화 생성형 AI 미디어아트 프로젝트입니다. ㄷ자 3면 빔프로젝션(통합 9,754×1,080px 3분할)과 독립장 백월·프로젝터 존을 아우르는 AI 에셋 생성 및 After Effects 심리스 루프·합성 파이프라인을 구축했습니다.",
+    "gallery": [
+      "/projects/shinhwa_1f_meeting.jpg",
+      "/projects/shinhwa_1f_ceramics.jpg",
+      "/projects/shinhwa_1f_china.jpg",
+      "/projects/shinhwa_b1_backwall.jpg",
+      "/projects/shinhwa_b1_moonrise.jpg",
+      "/projects/shinhwa_b1_clouds.jpg"
+    ],
+    "specs": {
+      "target": "제주 신화갤러리 방문객 대상, 소장 유물이 주인공이 되고 미디어가 조연으로 받쳐주는 몰입형 전시 환경 조성",
+      "role": "1F·B1 전시존 미디어아트 기획, 생성형 AI 기반 키비주얼·에셋 제작, 대형 다면 프로젝션 합성 및 루프 설계",
+      "process": "유물·전시동선 분석('유물이 주인공, 미디어는 조연') ➔ 존별 키비주얼·팔레트 설계 ➔ 생성형 AI 에셋 큐레이션 ➔ 초고해상도 3분할(9,754×1,080) AE 레이어 합성 및 100초 심리스 루프 구축",
+      "tools": "Generative AI (Image/Video), After Effects, Photoshop",
+      "aiScope": "고미술 유물 모티프(산수·운학·매화·달항아리 등)의 회화·포토리얼 AI 에셋 생성 및 실물 유물 무변형 합성 (※ 정식 오픈 전 보안 프로젝트로 영상 미게시, 기획/키비주얼 스틸 중심 전시)",
+      "result": "제주 신화갤러리 1F·B1 전관 실감 미디어 박물관 미디어아트 구축 프로젝트 (정식 오픈 예정)"
+    }
+  },
+  "pog": {
+    "title": "POG 보행 안전 평가 시뮬레이터 (UE5 3-Channel)",
+    "client": "(주)포그 (POG)",
+    "year": "2026.01 - 2026.02",
+    "category": "Unreal Engine 5 / 3-Channel Spatial Simulation",
+    "roles": "차량 주행·신호등 제어 로직, 보행자 속도 기반 카메라 시퀀스, 영상 후반작업 일체 (기여도 50%)",
+    "tools": "Unreal Engine 5 (Sequencer, MRQ), nDisplay / 멀티채널 렌더링, After Effects, Premiere Pro",
+    "img": "/projects/pog_main.jpg",
+    "youtubeLinks": [
+      {
+        "label": "▶ Watch 3-Channel Highlight (YouTube)",
+        "url": "https://youtu.be/moYmTJRSj6M"
+      }
+    ],
+    "desc": "(주)포그의 보행 안전 진단용 실사 기반 디지털 도시 시뮬레이터 고도화 프로젝트입니다. 보행 사고 다발 케이스 12종(교차로·주차장·골목길·무신호 횡단보도 등)을 언리얼 엔진 5 기반 16:3 3채널 파노라마 환경으로 구현하고, 차량 주행·신호등 제어 로직과 보행자 속도 동기화 카메라 시퀀스 및 사운드·편집 후반작업 일체를 전담했습니다.",
+    "gallery": [
+      "/projects/pog_main.jpg",
+      "/projects/pog_still_1.jpg",
+      "/projects/pog_still_2.jpg",
+      "/projects/pog_still_3.jpg"
+    ],
+    "specs": {
+      "target": "보행자 위험 인지력 정밀 측정용 3채널(16:3) 몰입형 실사 도시 보행 시뮬레이터 사용자",
+      "role": "기여도 50% — Case 1~12 차량 주행 동선 및 신호등 적·녹 전환 제어 로직 구현, 보행자 속도 기반 UE5 카메라 시퀀스·출력 최적화, 5분 38초 최종 시뮬레이션 영상 후반작업(편집·사운드) 일체",
+      "process": "사고 다발 12개 보행 루트 분석 ➔ 차량 이동·신호등 제어 로직 구현 ➔ 보행자 시선/속도 기반 UE5 Sequencer·MRQ 3채널 출력 ➔ 백색 소음·차량 사운드 및 최종 시뮬레이션 영상 완성",
+      "tools": "Unreal Engine 5 (Sequencer, Movie Render Queue), nDisplay / 멀티채널 렌더링, After Effects, Premiere Pro",
+      "aiScope": "",
+      "result": "(주)포그 보행 진단 시뮬레이터 12개 시나리오 통합 5분 38초 최종 용역 납품 완료 (2026.02) · 포트폴리오 46초 하이라이트 편집본 공개"
+    }
   }
 }
